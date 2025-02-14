@@ -14,106 +14,141 @@
   </head>
   <body>
     <main>
-      <div>
-        <div>
-          <img
-            src="./images/image-jeremy.png"
-            width="70"
-            height="70"
-            alt="A smiling man with dreadlocks, wearing denim jacket and earphones" />
-          <p>Report for</p>
-          <h2>Jeremy Robson</h2>
+      <h1 class="sr-only">Time Tracking Dashboard</h1>
+      <div class="card">
+        <div class="card__content">
+          <div class="card__img-container">
+            <img
+              class="card__img-profile"
+              src="./images/image-jeremy.png"
+              width="70"
+              height="70"
+              alt="A smiling man with dreadlocks, wearing denim jacket and earphones" />
+          </div>
+          <div class="card__intro">
+            <p class="card__label">Report for</p>
+            <h2 class="card__title">Jeremy Robson</h2>
+          </div>
         </div>
-        <div>
-          <p><span>Daily</span> <span>Weekly</span> <span>Monthly</span></p>
+        <div class="card__tabs-container">
+          <p class="card__tabs">
+            <span class="card__tab">Daily</span> <span class="card__tab">Weekly</span> <span class="card__tab">Monthly</span>
+          </p>
         </div>
       </div>
 
-      <div>
-        <div>
-          <img src="./images/icon-work.svg" alt="" />
+      <div class="card">
+        <div class="card__decorative">
+          <img class="card__image" src="./images/icon-work.svg" alt="" />
         </div>
-        <div>
-          <div>
-            <h3>Work</h3>
-            <img src="./images/icon-ellipsis.svg" alt="" />
+        <div class="card__content">
+          <div class="card__name">
+            <h3 class="card__subtitle">Work</h3>
+            <img
+              class="card__options"
+              src="./images/icon-ellipsis.svg"
+              alt="" />
           </div>
-          <!-- daily -->
-          <div>
-            <p>5hrs</p>
-            <p>Previous - 7hrs</p>
+          <div class="card__stats">
+            <p class="card__hrs">5hrs</p>
+            <p class="card__hrs-previous">Previous - 7hrs</p>
           </div>
         </div>
       </div>
 
-      <div>
-        <div>
-          <img src="./images/icon-play.svg" alt="" />
+      <div class="card">
+        <div class="card__decorative">
+          <img class="card__image" src="./images/icon-play.svg" alt="" />
         </div>
-        <div>
-          <h3>Play</h3>
-          <img src="./images/icon-ellipsis.svg" alt="" />
-        </div>
-        <!-- daily -->
-        <div>
-          <p>1hr</p>
-          <p>Previous - 2hrs</p>
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="./images/icon-study.svg" alt="" />
-        </div>
-        <div>
-          <h3>Study</h3>
-          <img src="./images/icon-ellipsis.svg" alt="" />
-        </div>
-        <!-- daily -->
-        <div>
-          <p>0hrs</p>
-          <p>Previous - 1hr</p>
+        <div class="card__content">
+          <div class="card__name">
+            <h3 class="card__subtitle">Play</h3>
+            <img
+              class="card__options"
+              src="./images/icon-ellipsis.svg"
+              alt="" />
+          </div>
+
+          <div class="card__stats">
+            <p class="card__hrs">1hr</p>
+            <p class="card__hrs-previous">Previous - 2hrs</p>
+          </div>
         </div>
       </div>
-      <div>
-        <div>
-          <img src="./images/icon-exercise.svg" alt="" />
+
+      <div class="card">
+        <div class="card__decorative">
+          <img class="card__image" src="./images/icon-study.svg" alt="" />
         </div>
-        <div>
-          <h3>Exercise</h3>
-          <img src="./images/icon-ellipsis.svg" alt="" />
-        </div>
-        <!-- daily -->
-        <div>
-          <p>1hr</p>
-          <p>Previous - 1hr</p>
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="./images/icon-social.svg" alt="" />
-        </div>
-        <div>
-          <h3>Social</h3>
-          <img src="./images/icon-ellipsis.svg" alt="" />
-        </div>
-        <!-- daily -->
-        <div>
-          <p>1hr</p>
-          <p>Previous - 3hrs</p>
+        <div class="card__content">
+          <div class="card__name">
+            <h3 class="card__subtitle">Study</h3>
+            <img
+              class="card__options"
+              src="./images/icon-ellipsis.svg"
+              alt="" />
+          </div>
+          <div class="card__stats">
+            <p class="card__hrs">0hrs</p>
+            <p class="card__hrs-previous">Previous - 1hr</p>
+          </div>
         </div>
       </div>
-      <div>
-        <div>
-          <img src="./images/icon-self-care.svg" alt="" />
+
+      <div class="card">
+        <div class="card__decorative">
+          <img class="card__image" src="./images/icon-exercise.svg" alt="" />
+        </div>
+        <div class="card__content">
+          <div class="card__name">
+            <h3 class="card__subtitle">Exercise</h3>
+            <img
+              class="card__options"
+              src="./images/icon-ellipsis.svg"
+              alt="" />
+          </div>
+          <div class="card__stats">
+            <p class="card__hrs">1hr</p>
+            <p class="card__hrs-previous">Previous - 1hr</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__decorative">
+          <img class="card__image" src="./images/icon-social.svg" alt="" />
+        </div>
+        <div class="card__content">
+          <div class="card__name">
+            <h3 class="card__subtitle">Social</h3>
+            <img
+              class="card__options"
+              src="./images/icon-ellipsis.svg"
+              alt="" />
+          </div>
+          <div class="card__stats">
+            <p class="card__hrs">1hr</p>
+            <p class="card__hrs-previous">Previous - 3hrs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__decorative">
+          <img class="card__image" src="./images/icon-self-care.svg" alt="" />
         </div>
         <div>
-          <h3>Self Care</h3>
-          <img src="./images/icon-ellipsis.svg" alt="" />
-        </div>
-        <!-- daily -->
-        <div>
-          <p>0hrs</p>
-          <p>Previous - 1hr</p>
+          <div class="card__name">
+            <h3 class="card__subtitle">Self Care</h3>
+            <img
+              class="card__options"
+              src="./images/icon-ellipsis.svg"
+              alt="" />
+          </div>
+          <div class="card__stats">
+            <p class="card__hrs">0hrs</p>
+            <p class="card__hrs-previous">Previous - 1hr</p>
+          </div>
         </div>
       </div>
     </main>
@@ -201,7 +236,7 @@
     <!-- weekly -->
     <!-- Previous - 2hrs -->
     <!-- weekly -->
-     
+
     <!-- 7hrs -->
     <!-- monthly -->
     <!-- Previous - 11hrs -->
