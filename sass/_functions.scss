@@ -1,0 +1,8 @@
+// Import the math library
+@use 'sass:math';
+
+
+// Convert px to rem
+@function pxToRem($px) {
+  @return math.div($px, 16) * 1rem;
+}
