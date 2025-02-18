@@ -1,0 +1,14 @@
+// Add flex to an element
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// Media Query
+@mixin tablet {
+  @media (min-width: 48em) {
+    @content;
+  }
+}
