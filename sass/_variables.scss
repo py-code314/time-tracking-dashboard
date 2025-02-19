@@ -1,8 +1,10 @@
+@use 'functions' as *;
+
 // Colors
 $clr-blue: hsl(246, 80%, 60%);
-$clr-light-red: hsl(15, 100%, 70%);
+$clr-light-red-work: hsl(15, 100%, 70%);
 $clr-soft-blue: hsl(195, 74%, 62%);
-$clr-light-red: hsl(348, 100%, 68%);
+$clr-light-red-study: hsl(348, 100%, 68%);
 $clr-lime-green: hsl(145, 58%, 55%);
 $clr-violet: hsl(264, 64%, 52%);
 $clr-soft-orange: hsl(43, 84%, 65%);
@@ -10,6 +12,7 @@ $clr-very-dark-blue: hsl(226, 43%, 10%);
 $clr-dark-blue: hsl(235, 46%, 20%);
 $clr-desaturated-blue: hsl(235, 45%, 61%);
 $clr-pale-blue: hsl(236, 100%, 87%);
+$clr-white: hsl(0, 0%, 100%);
 
 // FONTS
 
@@ -17,10 +20,34 @@ $clr-pale-blue: hsl(236, 100%, 87%);
 $ff-rubik: "Rubik", serif;
 
 // Font Sizes
+$fs-300: pxToRem(14);
 $fs-500: pxToRem(18);
+$fs-850: pxToRem(30);
 
 // Font Weights
 $fw-light: 300;
 $fw-normal: 400;
 $fw-medium: 500;
 
+// Spacing
+$space-40: pxToRem(4);
+$space-300: pxToRem(14);
+$space-350: pxToRem(15);
+$space-400: pxToRem(16);
+$space-675: pxToRem(23);
+$space-700: pxToRem(24);
+$space-800: pxToRem(28);
+$space-850: pxToRem(30);
+$space-900: pxToRem(32);
+$space-1050: pxToRem(38);
+$space-1100: pxToRem(40);
+$space-2100: pxToRem(80);
+
+// Card Widths
+$width-dashboard-mobile: pxToRem(327);
+
+// Utilities
+$radius-md: pxToRem(15);
+$radius-lg: 50%;
+$opacity-1: 0.5;
+$opacity-2: 0.8;

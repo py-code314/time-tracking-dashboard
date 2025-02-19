@@ -1,0 +1,241 @@
+/* ===================
+   ANDY BELLS' RESET 
+   =================== */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+* {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik", serif;
+  color: hsl(0, 0%, 100%);
+  padding: 5rem 1.5rem;
+}
+
+/* Hidden Page Title */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4375rem;
+  max-width: 20.4375rem;
+}
+
+.card-member {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 0.9375rem;
+}
+
+.card-member__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2.5rem 2rem 1.875rem;
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 0.9375rem;
+  gap: 1rem;
+}
+
+.card__img-profile {
+  border: 3px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+
+/* TODO: Why font weight not applying to h2? */
+.card__intro {
+  font-weight: 300;
+}
+
+.card__label {
+  font-size: 0.875rem;
+  opacity: 0.5;
+  letter-spacing: 0.8px;
+}
+
+.card__title {
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.card__btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0.875rem 1.5rem 1.75rem;
+}
+
+.card__btn {
+  background-color: hsl(235, 46%, 20%);
+  border: transparent;
+  font-size: 1.125rem;
+  color: hsl(236, 100%, 87%);
+}
+
+.card__btn-duration {
+  opacity: 0.5;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0;
+}
+
+.card {
+  border-radius: 0.9375rem;
+}
+
+.card--work {
+  padding-block-start: 2.375rem;
+  background: hsl(15, 100%, 70%) url("../images/icon-work.svg") no-repeat 93% -11%;
+}
+
+.card--play {
+  padding-block-start: 2.375rem;
+  background: hsl(195, 74%, 62%) url("../images/icon-play.svg") no-repeat 92% -7%;
+}
+
+.card--study {
+  padding-block-start: 2.375rem;
+  background: hsl(348, 100%, 68%) url("../images/icon-study.svg") no-repeat 93% -8%;
+}
+
+.card--exercise {
+  padding-block-start: 2.375rem;
+  background: hsl(145, 58%, 55%) url("../images/icon-exercise.svg") no-repeat 93% -1%;
+}
+
+.card--social {
+  padding-block-start: 2.375rem;
+  background: hsl(264, 64%, 52%) url("../images/icon-social.svg") no-repeat 95% -22%;
+}
+
+.card--self-care {
+  padding-block-start: 2.375rem;
+  background: hsl(43, 84%, 65%) url("../images/icon-self-care.svg") no-repeat 94% -13%;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 0.9375rem;
+}
+
+.card__name,
+.card__stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__subtitle a {
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.card__btn-options {
+  padding-inline-end: 0;
+}
+
+.card__stats {
+  letter-spacing: 0.6px;
+}
+
+.card__hrs {
+  font-size: 1.875rem;
+  font-weight: 300;
+}
+
+.card__hrs-previous {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: hsl(236, 100%, 87%);
+}

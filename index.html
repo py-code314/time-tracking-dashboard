@@ -16,16 +16,16 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="./css/styles.css"
+    <link rel="stylesheet" href="./css/styles.css">
 
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
   <body>
     <main>
       <h1 class="sr-only">Time Tracking Dashboard</h1>
-      <div class="cards-container">
-        <div class="card">
-          <div class="card__content">
+      <div class="dashboard">
+        <div class="card card-member">
+          <div class="card-member__content">
             <div class="card__img-container">
               <img
                 class="card__img-profile"
@@ -39,24 +39,26 @@
               <h2 class="card__title">Jeremy Robson</h2>
             </div>
           </div>
+          
+            
+          
           <div id="card__btns" class="card__btns" aria-label="Statistics">
-            <button id="daily" class="card__btn" aria-selected="true">
+            <button id="daily" class="card__btn card__btn-duration" aria-selected="true">
               Daily
             </button>
-            <button id="weekly" class="card__btn" aria-selected="false">
+            <button id="weekly" class="card__btn card__btn-duration" aria-selected="false">
               Weekly
             </button>
-            <button id="monthly" class="card__btn" aria-selected="false">
+            <button id="monthly" class="card__btn card__btn-duration" aria-selected="false">
               Monthly
             </button>
           </div>
         </div>
+
         <!-- Use <ul> and <li> to enhance screen reader users' experience -->
         <ul class="cards" aria-labelledby="daily" role="list">
-          <li class="card" role="listitem">
-            <div class="card__decorative">
-              <img class="card__image" src="./images/icon-work.svg" alt="" />
-            </div>
+          <li class="card card--work" role="listitem">
+            
             <div class="card__content">
               <div class="card__name">
                 <!-- TODO: Can i place imag inside h3? If so will it get too big? -->
@@ -71,12 +73,16 @@
                   >
                 </h3>
                 <!-- Screen readers shouldn't announce <img>. This is just decorative-->
-                <img
-                  id="more__options"
-                  class="card__options"
-                  src="./images/icon-ellipsis.svg"
-                  alt="More options for Work"
-                  aria-hidden="true" />
+                <button id="more__options" 
+                class=" card__btn card__btn-options"
+                aria-hidden="true">
+                  <img
+                    
+                    class="card__btn-img"
+                    src="./images/icon-ellipsis.svg"
+                    alt="More options for Work"
+                     />
+                </button>
 
                 <!-- Alternate code -->
                 <!-- <h3 class="card__subtitle">
@@ -89,16 +95,15 @@
                 </h3> -->
               </div>
               <div class="card__stats">
-                <p class="card__hrs">5hrs</p>
-                <p class="card__hrs-previous">Previous - 7hrs</p>
+                <p class="card__hrs">32hrs</p>
+                <p class="card__hrs-previous">Last Week - 36hrs</p>
               </div>
             </div>
           </li>
 
-          <li class="card" role="listitem">
-            <div class="card__decorative">
-              <img class="card__image" src="./images/icon-play.svg" alt="" />
-            </div>
+          <li class="card card--play" role="listitem">
+            
+            
             <div class="card__content">
               <div class="card__name">
                 <h3 class="card__subtitle">
@@ -109,24 +114,26 @@
                     >Play</a
                   >
                 </h3>
-                <img
-                  id="more__options"
-                  class="card__options"
-                  src="./images/icon-ellipsis.svg"
-                  alt="More options for Play"
-                  aria-hidden="true" />
+                <button id="more__options" 
+                class=" card__btn card__btn-options"
+                aria-hidden="true">
+                  <img
+                    
+                    class="card__btn-img"
+                    src="./images/icon-ellipsis.svg"
+                    alt="More options for Work"
+                     />
+                </button>
               </div>
               <div class="card__stats">
-                <p class="card__hrs">1hr</p>
-                <p class="card__hrs-previous">Previous - 2hrs</p>
+                <p class="card__hrs">10hrs</p>
+                <p class="card__hrs-previous">Last Week - 8hrs</p>
               </div>
             </div>
           </li>
 
-          <li class="card" role="listitem">
-            <div class="card__decorative">
-              <img class="card__image" src="./images/icon-study.svg" alt="" />
-            </div>
+          <li class="card card--study" role="listitem">
+            
             <div class="card__content">
               <div class="card__name">
                 <h3 class="card__subtitle">
@@ -137,27 +144,26 @@
                     >Study</a
                   >
                 </h3>
-                <img
-                  id="more__options"
-                  class="card__options"
-                  src="./images/icon-ellipsis.svg"
-                  alt="More options for Study"
-                  aria-hidden="true" />
+                <button id="more__options" 
+                class=" card__btn card__btn-options"
+                aria-hidden="true">
+                  <img
+                    
+                    class="card__btn-img"
+                    src="./images/icon-ellipsis.svg"
+                    alt="More options for Work"
+                     />
+                </button>
               </div>
               <div class="card__stats">
-                <p class="card__hrs">0hrs</p>
-                <p class="card__hrs-previous">Previous - 1hr</p>
+                <p class="card__hrs">4hrs</p>
+                <p class="card__hrs-previous">Last Week - 7hrs</p>
               </div>
             </div>
           </li>
 
-          <li class="card" role="listitem">
-            <div class="card__decorative">
-              <img
-                class="card__image"
-                src="./images/icon-exercise.svg"
-                alt="" />
-            </div>
+          <li class="card card--exercise" role="listitem">
+            
             <div class="card__content">
               <div class="card__name">
                 <h3 class="card__subtitle">
@@ -168,24 +174,26 @@
                     >Exercise</a
                   >
                 </h3>
-                <img
-                  id="more__options"
-                  class="card__options"
-                  src="./images/icon-ellipsis.svg"
-                  alt="More options for Exercise"
-                  aria-hidden="true" />
+                <button id="more__options" 
+                class=" card__btn card__btn-options"
+                aria-hidden="true">
+                  <img
+                    
+                    class="card__btn-img"
+                    src="./images/icon-ellipsis.svg"
+                    alt="More options for Work"
+                     />
+                </button>
               </div>
               <div class="card__stats">
-                <p class="card__hrs">1hr</p>
-                <p class="card__hrs-previous">Previous - 1hr</p>
+                <p class="card__hrs">4hrs</p>
+                <p class="card__hrs-previous">Last Week - 5hrs</p>
               </div>
             </div>
           </li>
 
-          <li class="card" role="listitem">
-            <div class="card__decorative">
-              <img class="card__image" src="./images/icon-social.svg" alt="" />
-            </div>
+          <li class="card card--social" role="listitem">
+            
             <div class="card__content">
               <div class="card__name">
                 <h3 class="card__subtitle">
@@ -196,30 +204,29 @@
                     >Social</a
                   >
                 </h3>
-                <img
-                  id="more__options"
-                  class="card__options"
-                  src="./images/icon-ellipsis.svg"
-                  alt="More options for Social"
-                  aria-hidden="true" />
+                <button id="more__options" 
+                class=" card__btn card__btn-options"
+                aria-hidden="true">
+                  <img
+                    
+                    class="card__btn-img"
+                    src="./images/icon-ellipsis.svg"
+                    alt="More options for Work"
+                     />
+                </button>
               </div>
               <div class="card__stats">
-                <p class="card__hrs">1hr</p>
-                <p class="card__hrs-previous">Previous - 3hrs</p>
+                <p class="card__hrs">5hrs</p>
+                <p class="card__hrs-previous">Last Week - 10hrs</p>
               </div>
             </div>
           </li>
 
-          <li class="card" role="listitem">
-            <div class="card__decorative">
-              <img
-                class="card__image"
-                src="./images/icon-self-care.svg"
-                alt="" />
-            </div>
-            <div>
+          <li class="card card--self-care" role="listitem">
+            
+            <div class="card__content">
               <div class="card__name">
-                <h3 class="card__subtitle">Self Care</h3>
+                
                 <h3 class="card__subtitle">
                   <a
                     href="#"
@@ -228,16 +235,20 @@
                     >Self Care</a
                   >
                 </h3>
-                <img
-                  id="more__options"
-                  class="card__options"
-                  src="./images/icon-ellipsis.svg"
-                  alt="More options for Self Care"
-                  aria-hidden="true" />
+                <button id="more__options" 
+                class=" card__btn card__btn-options"
+                aria-hidden="true">
+                  <img
+                    
+                    class="card__btn-img"
+                    src="./images/icon-ellipsis.svg"
+                    alt="More options for Work"
+                     />
+                </button>
               </div>
               <div class="card__stats">
-                <p class="card__hrs">0hrs</p>
-                <p class="card__hrs-previous">Previous - 1hr</p>
+                <p class="card__hrs">2hrs</p>
+                <p class="card__hrs-previous">Last Week - 2hrs</p>
               </div>
             </div>
           </li>

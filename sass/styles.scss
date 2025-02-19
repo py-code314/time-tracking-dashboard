@@ -1,0 +1,176 @@
+@use 'mixins' as *;
+@use 'reset' as *;
+@use 'variables' as *;
+
+body {
+  @include flex;
+
+  font-family: $ff-rubik;
+  color: $clr-white;
+  padding: $space-2100 $space-700;
+}
+
+/* Hidden Page Title */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-675;
+
+  max-width: $width-dashboard-mobile;
+}
+
+// .card {
+//   width: 100%;
+// }
+
+.card-member {
+  background-color: $clr-dark-blue;
+  border-radius: $radius-md;
+}
+
+.card-member__content {
+  @include flex;
+  padding: $space-900 $space-1100 $space-900 $space-850;
+  background-color: $clr-blue;
+  border-radius: $radius-md;
+  gap: $space-400;
+}
+
+.card__img-profile {
+  border: 3px solid $clr-white;
+  border-radius: $radius-lg;
+}
+
+/* TODO: Why font weight not applying to h2? */
+.card__intro {
+  font-weight: $fw-light;
+}
+
+.card__label {
+  font-size: $fs-300;
+  opacity: $opacity-1;
+  letter-spacing: 0.8px;
+}
+
+.card__title {
+  font-weight: $fw-light;
+  opacity: $opacity-2;
+}
+
+.card__btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space-700 $space-300 $space-700 $space-800;
+}
+
+.card__btn {
+  background-color: $clr-dark-blue;
+  border: transparent;
+  font-size: $fs-500;
+  color: $clr-pale-blue;
+
+  
+}
+
+.card__btn-duration {
+  opacity: $opacity-1;
+}
+
+
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: $space-700;
+  width: 100%;
+  padding: 0;
+}
+
+.card {
+  border-radius: $radius-md;
+}
+
+.card--work {
+  padding-block-start: $space-1050;
+  background: $clr-light-red-work url('../images/icon-work.svg') no-repeat 93% -11%;
+}
+.card--play {
+  padding-block-start: $space-1050;
+  background: $clr-soft-blue url('../images/icon-play.svg') no-repeat 92% -7%;
+}
+.card--study {
+  padding-block-start: $space-1050;
+  background: $clr-light-red-study url('../images/icon-study.svg') no-repeat 93% -8%;
+}
+.card--exercise {
+  padding-block-start: $space-1050;
+  background: $clr-lime-green url('../images/icon-exercise.svg') no-repeat 93% -1%;
+}
+.card--social {
+  padding-block-start: $space-1050;
+  background: $clr-violet url('../images/icon-social.svg') no-repeat 95% -22%;
+}
+.card--self-care {
+  padding-block-start: $space-1050;
+  background: $clr-soft-orange url('../images/icon-self-care.svg') no-repeat 94% -13%;
+}
+
+
+
+.card__content {
+  
+  display: flex;
+  flex-direction: column;
+  gap: $space-40;
+  padding: $space-800 $space-700 $space-700;
+  background-color: $clr-dark-blue;
+  border-radius: $radius-md;
+
+  
+}
+
+.card__name,
+.card__stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__subtitle a {
+  text-decoration: none;
+  font-size: $fs-500;
+  font-weight: $fw-normal;
+}
+
+.card__btn-options {
+  padding-inline-end: 0;
+
+}
+
+.card__stats {
+   letter-spacing: 0.6px;
+}
+
+.card__hrs {
+  font-size: $fs-850;
+  font-weight: $fw-light;
+}
+
+.card__hrs-previous {
+  font-size: $fs-300;
+  font-weight: $fw-light;
+  color: $clr-pale-blue;
+}
