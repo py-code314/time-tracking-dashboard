@@ -97,15 +97,28 @@ body {
 }
 
 .dashboard {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1.4375rem;
-  max-width: 20.4375rem;
+  max-inline-size: 20.4375rem;
+}
+@media (min-width: 62em) {
+  .dashboard {
+    max-inline-size: 69.375rem;
+    grid-template-columns: 15.9375rem 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "member stats" "member stats";
+    gap: 1.875rem;
+  }
 }
 
 .card-member {
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem;
+}
+@media (min-width: 62em) {
+  .card-member {
+    grid-area: member;
+  }
 }
 
 .card-member__content {
@@ -117,10 +130,24 @@ body {
   border-radius: 0.9375rem;
   gap: 1rem;
 }
+@media (min-width: 62em) {
+  .card-member__content {
+    flex-direction: column;
+    align-items: start;
+    gap: 2.375rem;
+    padding: 2rem 2rem 4.875rem;
+  }
+}
 
 .card__img-profile {
   border: 3px solid hsl(0, 0%, 100%);
   border-radius: 50%;
+}
+@media (min-width: 62em) {
+  .card__img-profile {
+    width: 5.3125rem;
+    height: 5.3125rem;
+  }
 }
 
 /* TODO: Why font weight not applying to h2? */
@@ -138,12 +165,27 @@ body {
   font-weight: 300;
   opacity: 0.8;
 }
+@media (min-width: 62em) {
+  .card__title {
+    font-size: 2.375rem;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+  }
+}
 
 .card__btns {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 0.875rem 1.5rem 1.75rem;
+}
+@media (min-width: 62em) {
+  .card__btns {
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25rem;
+    padding: 1.75rem;
+  }
 }
 
 .card__btn {
@@ -158,45 +200,91 @@ body {
 }
 
 .cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1.5rem;
   width: 100%;
   padding: 0;
+}
+@media (min-width: 62em) {
+  .cards {
+    grid-area: stats;
+    grid-template-columns: repeat(3, 15.9375rem);
+    grid-template-areas: "work play study" "exercise social self-care";
+    gap: 30px;
+  }
 }
 
 .card {
   border-radius: 0.9375rem;
 }
 
-.card--work {
+.card__item {
   padding-block-start: 2.375rem;
+}
+@media (min-width: 62em) {
+  .card__item {
+    padding-block-start: 2.75rem;
+  }
+}
+
+.card--work {
   background: hsl(15, 100%, 70%) url("../images/icon-work.svg") no-repeat 93% -11%;
+}
+@media (min-width: 62em) {
+  .card--work {
+    grid-area: work;
+    background-position: 90% -7%;
+  }
 }
 
 .card--play {
-  padding-block-start: 2.375rem;
   background: hsl(195, 74%, 62%) url("../images/icon-play.svg") no-repeat 92% -7%;
+}
+@media (min-width: 62em) {
+  .card--play {
+    grid-area: play;
+    background-position: 88% -3%;
+  }
 }
 
 .card--study {
-  padding-block-start: 2.375rem;
   background: hsl(348, 100%, 68%) url("../images/icon-study.svg") no-repeat 93% -8%;
+}
+@media (min-width: 62em) {
+  .card--study {
+    grid-area: study;
+    background-position: 90% -4%;
+  }
 }
 
 .card--exercise {
-  padding-block-start: 2.375rem;
   background: hsl(145, 58%, 55%) url("../images/icon-exercise.svg") no-repeat 93% -1%;
+}
+@media (min-width: 62em) {
+  .card--exercise {
+    grid-area: exercise;
+    background-position: 90% 0;
+  }
 }
 
 .card--social {
-  padding-block-start: 2.375rem;
   background: hsl(264, 64%, 52%) url("../images/icon-social.svg") no-repeat 95% -22%;
+}
+@media (min-width: 62em) {
+  .card--social {
+    grid-area: social;
+    background-position: 93% -10%;
+  }
 }
 
 .card--self-care {
-  padding-block-start: 2.375rem;
   background: hsl(43, 84%, 65%) url("../images/icon-self-care.svg") no-repeat 94% -13%;
+}
+@media (min-width: 62em) {
+  .card--self-care {
+    grid-area: self-care;
+    background-position: 92% -5%;
+  }
 }
 
 .card__content {
@@ -206,6 +294,12 @@ body {
   padding: 1.75rem 1.5rem 1.5rem;
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem;
+}
+@media (min-width: 62em) {
+  .card__content {
+    gap: 1.125rem;
+    padding: 1.875rem;
+  }
 }
 
 .card__name,
@@ -228,10 +322,22 @@ body {
 .card__stats {
   letter-spacing: 0.6px;
 }
+@media (min-width: 62em) {
+  .card__stats {
+    flex-direction: column;
+    align-items: start;
+  }
+}
 
 .card__hrs {
   font-size: 1.875rem;
   font-weight: 300;
+}
+@media (min-width: 62em) {
+  .card__hrs {
+    font-size: 3.5rem;
+    line-height: 1.4;
+  }
 }
 
 .card__hrs-previous {

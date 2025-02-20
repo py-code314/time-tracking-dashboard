@@ -23,6 +23,8 @@ $ff-rubik: "Rubik", serif;
 $fs-300: pxToRem(14);
 $fs-500: pxToRem(18);
 $fs-850: pxToRem(30);
+$fs-1050: pxToRem(38);
+$fs-1500: pxToRem(56);
 
 // Font Weights
 $fw-light: 300;
@@ -34,6 +36,8 @@ $space-40: pxToRem(4);
 $space-300: pxToRem(14);
 $space-350: pxToRem(15);
 $space-400: pxToRem(16);
+$space-500: pxToRem(18);
+$space-600: pxToRem(20);
 $space-675: pxToRem(23);
 $space-700: pxToRem(24);
 $space-800: pxToRem(28);
@@ -41,10 +45,15 @@ $space-850: pxToRem(30);
 $space-900: pxToRem(32);
 $space-1050: pxToRem(38);
 $space-1100: pxToRem(40);
+$space-1300: pxToRem(44);
+$space-2050: pxToRem(78);
 $space-2100: pxToRem(80);
+$space-2225: pxToRem(85);
 
 // Card Widths
 $width-dashboard-mobile: pxToRem(327);
+$width-dashboard-laptop: pxToRem(1110);
+$width-card: pxToRem(255);
 
 // Utilities
 $radius-md: pxToRem(15);

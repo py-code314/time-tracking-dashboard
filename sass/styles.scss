@@ -24,33 +24,55 @@ body {
 }
 
 .dashboard {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: $space-675;
+  max-inline-size: $width-dashboard-mobile;
 
-  max-width: $width-dashboard-mobile;
+  @include laptop {
+    max-inline-size: $width-dashboard-laptop;
+    grid-template: {
+      columns: $width-card 1fr;
+      rows: repeat(2, 1fr);
+      areas: 'member stats' 'member stats';
+    }
+    gap: $space-850;
+  }
 }
 
-// .card {
-//   width: 100%;
-// }
 
 .card-member {
   background-color: $clr-dark-blue;
   border-radius: $radius-md;
+
+  @include laptop {
+    grid-area: member;
+  }
 }
 
 .card-member__content {
   @include flex;
   padding: $space-900 $space-1100 $space-900 $space-850;
+  
   background-color: $clr-blue;
   border-radius: $radius-md;
   gap: $space-400;
+
+  @include laptop {
+    flex-direction: column;
+    align-items: start;
+    gap: $space-1050;
+    padding: $space-900 $space-900 $space-2050;
+  }
 }
 
 .card__img-profile {
   border: 3px solid $clr-white;
   border-radius: $radius-lg;
+
+  @include laptop {
+    width: $space-2225;
+    height: $space-2225;
+  }
 }
 
 /* TODO: Why font weight not applying to h2? */
@@ -67,6 +89,12 @@ body {
 .card__title {
   font-weight: $fw-light;
   opacity: $opacity-2;
+
+  @include laptop {
+    font-size: $fs-1050;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+  }
 }
 
 .card__btns {
@@ -74,6 +102,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: $space-700 $space-300 $space-700 $space-800;
+
+  @include laptop {
+    flex-direction: column;
+    align-items: start;
+    gap: $space-600;
+    padding: $space-800;
+  }
 }
 
 .card__btn {
@@ -81,57 +116,91 @@ body {
   border: transparent;
   font-size: $fs-500;
   color: $clr-pale-blue;
-
-  
 }
 
 .card__btn-duration {
   opacity: $opacity-1;
 }
 
-
-
 .cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: $space-700;
   width: 100%;
   padding: 0;
+
+  @include laptop {
+    grid-area: stats;
+    grid-template: {
+      columns: repeat(3, $width-card);
+      // rows: repeat(2, 1fr);
+      areas: 'work play study' 'exercise social self-care';
+    }
+    gap: 30px;
+  }
 }
 
 .card {
   border-radius: $radius-md;
 }
 
-.card--work {
+.card__item {
   padding-block-start: $space-1050;
+
+  @include laptop {
+    padding-block-start: $space-1300;
+  }
+}
+
+.card--work {
   background: $clr-light-red-work url('../images/icon-work.svg') no-repeat 93% -11%;
+
+  @include laptop {
+    grid-area: work;
+    background-position: 90% -7%;
+  }
 }
 .card--play {
-  padding-block-start: $space-1050;
   background: $clr-soft-blue url('../images/icon-play.svg') no-repeat 92% -7%;
+
+  @include laptop {
+    grid-area: play;
+    background-position: 88% -3%;
+  }
 }
 .card--study {
-  padding-block-start: $space-1050;
-  background: $clr-light-red-study url('../images/icon-study.svg') no-repeat 93% -8%;
+  background: $clr-light-red-study url('../images/icon-study.svg')no-repeat 93% -8%;
+
+  @include laptop {
+    grid-area: study;
+    background-position: 90% -4%;
+  }
 }
 .card--exercise {
-  padding-block-start: $space-1050;
   background: $clr-lime-green url('../images/icon-exercise.svg') no-repeat 93% -1%;
+
+  @include laptop {
+    grid-area: exercise;
+    background-position: 90% 0;
+  }
 }
 .card--social {
-  padding-block-start: $space-1050;
   background: $clr-violet url('../images/icon-social.svg') no-repeat 95% -22%;
+
+  @include laptop {
+    grid-area: social;
+    background-position: 93% -10%;
+  }
 }
 .card--self-care {
-  padding-block-start: $space-1050;
   background: $clr-soft-orange url('../images/icon-self-care.svg') no-repeat 94% -13%;
+
+  @include laptop {
+    grid-area: self-care;
+    background-position: 92% -5%;
+  }
 }
 
-
-
 .card__content {
-  
   display: flex;
   flex-direction: column;
   gap: $space-40;
@@ -139,7 +208,10 @@ body {
   background-color: $clr-dark-blue;
   border-radius: $radius-md;
 
-  
+  @include laptop {
+    gap: $space-500;
+    padding: $space-850;
+  }
 }
 
 .card__name,
@@ -157,16 +229,25 @@ body {
 
 .card__btn-options {
   padding-inline-end: 0;
-
 }
 
 .card__stats {
-   letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+
+  @include laptop {
+    flex-direction: column;
+    align-items: start;
+  }
 }
 
 .card__hrs {
   font-size: $fs-850;
   font-weight: $fw-light;
+
+  @include laptop {
+    font-size: $fs-1500;
+    line-height: 1.4;
+  }
 }
 
 .card__hrs-previous {
