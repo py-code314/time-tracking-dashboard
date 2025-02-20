@@ -193,10 +193,17 @@ body {
   border: transparent;
   font-size: 1.125rem;
   color: hsl(236, 100%, 87%);
+  cursor: pointer;
 }
 
 .card__btn-duration {
   opacity: 0.5;
+}
+
+.card__btn-duration:hover,
+.card__btn-duration:focus {
+  color: hsl(0, 0%, 100%);
+  opacity: 1;
 }
 
 .cards {
@@ -302,6 +309,24 @@ body {
   }
 }
 
+.card__content:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.card__content a:focus {
+  text-decoration: underline;
+}
+
+.card__content:focus-within {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.card__content:focus-within a:focus {
+  text-decoration: none;
+}
+
 .card__name,
 .card__stats {
   display: flex;
@@ -313,6 +338,10 @@ body {
   text-decoration: none;
   font-size: 1.125rem;
   font-weight: 400;
+}
+
+.card__subtitle a:focus {
+  outline: none;
 }
 
 .card__btn-options {

@@ -3,6 +3,7 @@
 const cards = document.querySelectorAll('.card__content');
 console.log(cards);
 
+/* Function to make whole card clickable & make text within copyable */
 // Array.prototype.forEach.call() is a way to use 'forEach' method on non-array objects.
 Array.prototype.forEach.call(cards, (card) => {
   // down & up variables are only initialized, link is assigned to link element.

@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css" />
 
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
@@ -39,17 +39,24 @@
               <h2 class="card__title">Jeremy Robson</h2>
             </div>
           </div>
-          
-            
-          
+
           <div id="card__btns" class="card__btns" aria-label="Statistics">
-            <button id="daily" class="card__btn card__btn-duration" aria-selected="true">
+            <button
+              id="daily"
+              class="card__btn card__btn-duration"
+              aria-selected="true">
               Daily
             </button>
-            <button id="weekly" class="card__btn card__btn-duration" aria-selected="false">
+            <button
+              id="weekly"
+              class="card__btn card__btn-duration"
+              aria-selected="false">
               Weekly
             </button>
-            <button id="monthly" class="card__btn card__btn-duration" aria-selected="false">
+            <button
+              id="monthly"
+              class="card__btn card__btn-duration"
+              aria-selected="false">
               Monthly
             </button>
           </div>
@@ -57,32 +64,30 @@
 
         <!-- Use <ul> and <li> to enhance screen reader users' experience -->
         <ul class="cards" aria-labelledby="daily" role="list">
-          <li class="card  card__item card--work" role="listitem">
-            
+          <li class="card card__item card--work" role="listitem">
             <div class="card__content">
               <div class="card__name">
                 <!-- TODO: Can i place imag inside h3? If so will it get too big? -->
                 <!-- 'preventDefault()' stops reloading of the page-->
                 <!-- Screen reader reads 'alt text' of image because of the usage of 'aria-describedby'-->
                 <h3 class="card__subtitle">
-                  <a
-                    href="#"
-                    onclick="event.preventDefault()"
-                    aria-describedby="more__options"
-                    >Work</a
-                  >
+                  <a href="#" onclick="event.preventDefault()">Work</a>
                 </h3>
-                <!-- Screen readers shouldn't announce <img>. This is just decorative-->
-                <button id="more__options" 
-                class=" card__btn card__btn-options"
-                aria-hidden="true">
+                
+                <!-- TODO: should i make the button disables as h3 is a link already?-->
+
+                <button
+                  class="card__btn card__btn-options"
+                  aria-label="More options menu for Work"
+                  aria-expanded="false">
                   <img
-                    
+                    id="more__options"
                     class="card__btn-img"
                     src="./images/icon-ellipsis.svg"
-                    alt="More options for Work"
-                     />
+                    alt="" />
                 </button>
+
+                
 
                 <!-- Alternate code -->
                 <!-- <h3 class="card__subtitle">
@@ -102,27 +107,20 @@
           </li>
 
           <li class="card card__item card--play" role="listitem">
-            
-            
             <div class="card__content">
               <div class="card__name">
                 <h3 class="card__subtitle">
-                  <a
-                    href="#"
-                    onclick="event.preventDefault()"
-                    aria-describedby="more__options"
-                    >Play</a
-                  >
+                  <a href="#" onclick="event.preventDefault()">Play</a>
                 </h3>
-                <button id="more__options" 
-                class=" card__btn card__btn-options"
-                aria-hidden="true">
+                <button
+                  class="card__btn card__btn-options"
+                  aria-label="More options menu for Play"
+                  aria-expanded="false">
                   <img
-                    
+                    id="more__options"
                     class="card__btn-img"
                     src="./images/icon-ellipsis.svg"
-                    alt="More options for Work"
-                     />
+                    alt="" />
                 </button>
               </div>
               <div class="card__stats">
@@ -133,26 +131,20 @@
           </li>
 
           <li class="card card__item card--study" role="listitem">
-            
             <div class="card__content">
               <div class="card__name">
                 <h3 class="card__subtitle">
-                  <a
-                    href="#"
-                    onclick="event.preventDefault()"
-                    aria-describedby="more__options"
-                    >Study</a
-                  >
+                  <a href="#" onclick="event.preventDefault()">Study</a>
                 </h3>
-                <button id="more__options" 
-                class=" card__btn card__btn-options"
-                aria-hidden="true">
+                <button
+                  class="card__btn card__btn-options"
+                  aria-label="More options menu for Study"
+                  aria-expanded="false">
                   <img
-                    
+                    id="more__options"
                     class="card__btn-img"
                     src="./images/icon-ellipsis.svg"
-                    alt="More options for Work"
-                     />
+                    alt="" />
                 </button>
               </div>
               <div class="card__stats">
@@ -163,26 +155,20 @@
           </li>
 
           <li class="card card__item card--exercise" role="listitem">
-            
             <div class="card__content">
               <div class="card__name">
                 <h3 class="card__subtitle">
-                  <a
-                    href="#"
-                    onclick="event.preventDefault()"
-                    aria-describedby="more__options"
-                    >Exercise</a
-                  >
+                  <a href="#" onclick="event.preventDefault()">Exercise</a>
                 </h3>
-                <button id="more__options" 
-                class=" card__btn card__btn-options"
-                aria-hidden="true">
+                <button
+                  class="card__btn card__btn-options"
+                  aria-label="More options menu for Exercise"
+                  aria-expanded="false">
                   <img
-                    
+                    id="more__options"
                     class="card__btn-img"
                     src="./images/icon-ellipsis.svg"
-                    alt="More options for Work"
-                     />
+                    alt="" />
                 </button>
               </div>
               <div class="card__stats">
@@ -193,26 +179,20 @@
           </li>
 
           <li class="card card__item card--social" role="listitem">
-            
             <div class="card__content">
               <div class="card__name">
                 <h3 class="card__subtitle">
-                  <a
-                    href="#"
-                    onclick="event.preventDefault()"
-                    aria-describedby="more__options"
-                    >Social</a
-                  >
+                  <a href="#" onclick="event.preventDefault()">Social</a>
                 </h3>
-                <button id="more__options" 
-                class=" card__btn card__btn-options"
-                aria-hidden="true">
+                <button
+                  class="card__btn card__btn-options"
+                  aria-label="More options menu for Social"
+                  aria-expanded="false">
                   <img
-                    
+                    id="more__options"
                     class="card__btn-img"
                     src="./images/icon-ellipsis.svg"
-                    alt="More options for Work"
-                     />
+                    alt="" />
                 </button>
               </div>
               <div class="card__stats">
@@ -223,27 +203,20 @@
           </li>
 
           <li class="card card__item card--self-care" role="listitem">
-            
             <div class="card__content">
               <div class="card__name">
-                
                 <h3 class="card__subtitle">
-                  <a
-                    href="#"
-                    onclick="event.preventDefault()"
-                    aria-describedby="more__options"
-                    >Self Care</a
-                  >
+                  <a href="#" onclick="event.preventDefault()">Self Care</a>
                 </h3>
-                <button id="more__options" 
-                class=" card__btn card__btn-options"
-                aria-hidden="true">
+                <button
+                  class="card__btn card__btn-options"
+                  aria-label="More options menu for Self Care"
+                  aria-expanded="false">
                   <img
-                    
+                    id="more__options"
                     class="card__btn-img"
                     src="./images/icon-ellipsis.svg"
-                    alt="More options for Work"
-                     />
+                    alt="" />
                 </button>
               </div>
               <div class="card__stats">

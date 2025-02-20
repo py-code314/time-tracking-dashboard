@@ -39,7 +39,6 @@ body {
   }
 }
 
-
 .card-member {
   background-color: $clr-dark-blue;
   border-radius: $radius-md;
@@ -52,7 +51,7 @@ body {
 .card-member__content {
   @include flex;
   padding: $space-900 $space-1100 $space-900 $space-850;
-  
+
   background-color: $clr-blue;
   border-radius: $radius-md;
   gap: $space-400;
@@ -116,10 +115,17 @@ body {
   border: transparent;
   font-size: $fs-500;
   color: $clr-pale-blue;
+  cursor: pointer;
 }
 
 .card__btn-duration {
   opacity: $opacity-1;
+}
+
+.card__btn-duration:hover,
+.card__btn-duration:focus {
+  color: $clr-white;
+  opacity: 1;
 }
 
 .cards {
@@ -132,6 +138,7 @@ body {
     grid-area: stats;
     grid-template: {
       columns: repeat(3, $width-card);
+      // columns: repeat(auto-fill, minmax(255px, 1fr));
       // rows: repeat(2, 1fr);
       areas: 'work play study' 'exercise social self-care';
     }
@@ -168,7 +175,7 @@ body {
   }
 }
 .card--study {
-  background: $clr-light-red-study url('../images/icon-study.svg')no-repeat 93% -8%;
+  background: $clr-light-red-study url('../images/icon-study.svg') no-repeat 93% -8%;
 
   @include laptop {
     grid-area: study;
@@ -214,6 +221,25 @@ body {
   }
 }
 
+.card__content:hover {
+  // box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.card__content a:focus {
+  text-decoration: underline;
+}
+
+.card__content:focus-within {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.card__content:focus-within a:focus {
+  text-decoration: none;
+}
+
 .card__name,
 .card__stats {
   display: flex;
@@ -225,6 +251,10 @@ body {
   text-decoration: none;
   font-size: $fs-500;
   font-weight: $fw-normal;
+}
+
+.card__subtitle a:focus {
+  outline: none;
 }
 
 .card__btn-options {
