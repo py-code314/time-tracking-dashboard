@@ -52,33 +52,32 @@ function getDetails(data) {
     const { title, timeframes } = category;
     
     const { daily, weekly, monthly } = timeframes
-    console.log(daily);
+    
     const titleId = title.split(' ').join('-').toLowerCase()
     
 
-    dailyBtn.addEventListener('click', () => showDailyStats(title, titleId, daily))
+    // console.log('Daily: ', daily);
+    dailyBtn.addEventListener('click', () => showStats(title, titleId, daily))
 
-    weeklyBtn.addEventListener('click', () => showWeeklyStats(title, titleId, weekly))
+    // console.log('Weekly: ', weekly);
+    weeklyBtn.addEventListener('click', () => showStats(title, titleId, weekly))
 
-    monthlyBtn.addEventListener('click', () => showMonthlyStats(title, titleId, monthly))
+    // console.log('Monthly: ', monthly);
+    monthlyBtn.addEventListener('click', () => showStats(title, titleId, monthly))
 
-    showDailyStats(title, titleId, daily)
+    showStats(title, titleId, daily)
     
 
   })
 }
 
-function showDailyStats(title, titleId, timeframe) {
+function showStats(title, titleId, timeframe) {
   Array.from(cardNames).forEach((cardName) => {
     if (cardName.textContent === title) {
-      const currentHrs = document.querySelector(
-        `#current-hrs-${titleId}`
-      );
+      const currentHrs = document.querySelector(`#current-hrs-${titleId}`);
       currentHrs.textContent = timeframe.current;
-      const previousHrs = document.querySelector(
-        `#previous-hrs-${titleId}`
-      );
-      
+      const previousHrs = document.querySelector(`#previous-hrs-${titleId}`);
+
       previousHrs.textContent =
         timeframe.previous === 1
           ? `Last Week - ${timeframe.previous}hr`
@@ -86,41 +85,6 @@ function showDailyStats(title, titleId, timeframe) {
     }
   });
 }
-function showWeeklyStats(title, titleId, timeframe) {
-  Array.from(cardNames).forEach((cardName) => {
-    if (cardName.textContent === title) {
-      const currentHrs = document.querySelector(
-        `#current-hrs-${titleId}`
-      );
-      currentHrs.textContent = timeframe.current;
-      const previousHrs = document.querySelector(
-        `#previous-hrs-${titleId}`
-      );
-      
-      previousHrs.textContent =
-        timeframe.previous === 1
-          ? `Last Week - ${timeframe.previous}hr`
-          : `Last Week - ${timeframe.previous}hrs`;
-    }
-  });
-}
-function showMonthlyStats(title, titleId, timeframe) {
-  Array.from(cardNames).forEach((cardName) => {
-    if (cardName.textContent === title) {
-      const currentHrs = document.querySelector(
-        `#current-hrs-${titleId}`
-      );
-      currentHrs.textContent = timeframe.current;
-      const previousHrs = document.querySelector(
-        `#previous-hrs-${titleId}`
-      );
-      
-      previousHrs.textContent =
-        timeframe.previous === 1
-          ? `Last Week - ${timeframe.previous}hr`
-          : `Last Week - ${timeframe.previous}hrs`;
-    }
-  });
-}
+
 
 
