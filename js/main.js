@@ -56,8 +56,13 @@ function getDetails(data) {
     const titleId = title.split(' ').join('-').toLowerCase()
     
 
+    dailyBtn.addEventListener('click', () => showDailyStats(title, titleId, daily))
+
+    weeklyBtn.addEventListener('click', () => showWeeklyStats(title, titleId, weekly))
+
+    monthlyBtn.addEventListener('click', () => showMonthlyStats(title, titleId, monthly))
+
     showDailyStats(title, titleId, daily)
-    
     
 
   })
@@ -81,6 +86,41 @@ function showDailyStats(title, titleId, timeframe) {
     }
   });
 }
-
+function showWeeklyStats(title, titleId, timeframe) {
+  Array.from(cardNames).forEach((cardName) => {
+    if (cardName.textContent === title) {
+      const currentHrs = document.querySelector(
+        `#current-hrs-${titleId}`
+      );
+      currentHrs.textContent = timeframe.current;
+      const previousHrs = document.querySelector(
+        `#previous-hrs-${titleId}`
+      );
+      
+      previousHrs.textContent =
+        timeframe.previous === 1
+          ? `Last Week - ${timeframe.previous}hr`
+          : `Last Week - ${timeframe.previous}hrs`;
+    }
+  });
+}
+function showMonthlyStats(title, titleId, timeframe) {
+  Array.from(cardNames).forEach((cardName) => {
+    if (cardName.textContent === title) {
+      const currentHrs = document.querySelector(
+        `#current-hrs-${titleId}`
+      );
+      currentHrs.textContent = timeframe.current;
+      const previousHrs = document.querySelector(
+        `#previous-hrs-${titleId}`
+      );
+      
+      previousHrs.textContent =
+        timeframe.previous === 1
+          ? `Last Week - ${timeframe.previous}hr`
+          : `Last Week - ${timeframe.previous}hrs`;
+    }
+  });
+}
 
 
