@@ -1,6 +1,6 @@
-const daily = document.querySelector('#daily');
-const weekly = document.querySelector('#weekly');
-const monthly = document.querySelector('#monthly');
+const dailyBtn = document.querySelector('#daily');
+const weeklyBtn = document.querySelector('#weekly');
+const monthlyBtn = document.querySelector('#monthly');
 
 const cards = document.querySelectorAll('.card__content');
 
@@ -34,8 +34,8 @@ async function fetchStats() {
       throw new Error(`HTTP Error: ${response.status}`)
     }
     const data = await response.json()
-    // console.log(data);
-    populateDailyStats(data)
+  
+    getDetails(data)
 
    
   } catch (error) {
@@ -46,28 +46,40 @@ async function fetchStats() {
 fetchStats()
 
 
-function populateDailyStats(data) {
+function getDetails(data) {
  
   data.forEach(category => {
     const { title, timeframes } = category;
     
     const { daily, weekly, monthly } = timeframes
     console.log(daily);
-    const titleWithDash = title.split(' ').join('-').toLowerCase()
-    console.log(titleWithDash);
+    const titleId = title.split(' ').join('-').toLowerCase()
     
-    Array.from(cardNames).forEach((cardName) => {
-      
-      if (cardName.textContent === title) {
-        const currentHrs = document.querySelector(`#current-hrs-${titleWithDash}`);
-        currentHrs.textContent = daily.current;
-        const previousHrs = document.querySelector(`#previous-hrs-${titleWithDash}`);
-        console.log(previousHrs);
-        previousHrs.textContent = daily.previous === 1 ? `Last Week - ${daily.previous}hr` : `Last Week - ${daily.previous}hrs`;
-      }
-    })
+
+    showDailyStats(title, titleId, daily)
+    
+    
 
   })
+}
+
+function showDailyStats(title, titleId, timeframe) {
+  Array.from(cardNames).forEach((cardName) => {
+    if (cardName.textContent === title) {
+      const currentHrs = document.querySelector(
+        `#current-hrs-${titleId}`
+      );
+      currentHrs.textContent = timeframe.current;
+      const previousHrs = document.querySelector(
+        `#previous-hrs-${titleId}`
+      );
+      
+      previousHrs.textContent =
+        timeframe.previous === 1
+          ? `Last Week - ${timeframe.previous}hr`
+          : `Last Week - ${timeframe.previous}hrs`;
+    }
+  });
 }
 
 
