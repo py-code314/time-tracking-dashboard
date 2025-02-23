@@ -2,7 +2,7 @@ const dailyBtn = document.querySelector('#daily');
 const weeklyBtn = document.querySelector('#weekly');
 const monthlyBtn = document.querySelector('#monthly');
 const cardWork = document.querySelector('.card--work');
-const cards = document.querySelectorAll('.card__content');
+const cards = Array.from(document.querySelectorAll('.card__content'));
 const cardBtns = Array.from(document.querySelectorAll('.card__btn-duration'));
 // console.log(cardBtns);
 
@@ -55,7 +55,7 @@ function renderTimeTrackingData(data) {
       btn.addEventListener('click', (event) => {
         showStats(title, formattedTitleId, timeframes[btn.id]);
         updateAriaSelected(event);
-        changeFocus(event)
+        // changeFocusToCard(event)
       });
     });
 
@@ -87,27 +87,40 @@ function showStats(categoryTitle, categoryTitleId, { current, previous }) {
 
 function updateAriaSelected(event) {
   event.preventDefault();
-  cardBtns.forEach(button => {
+  cardBtns.forEach((button) => {
     button.ariaSelected = false;
     event.currentTarget.ariaSelected = true;
-  })
-  
-  
+  });
 }
 
-function changeFocus(event) {
-  event.preventDefault()
-  cards[0].focus()
-}
+cardBtns.forEach((button, buttonIndex) => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
 
+    button.style.color = 'white';
+    cards[0].focus();
 
-// cards.forEach((card, index) => {
-//   card.addEventListener('keydown', (event) => {
-    
-//     if (event.key === "Tab") {
-//       console.log(event.key);
-//       event.preventDefault();
-//       (cards[index + 1] || cardBtns[0]).focus()
-//     }
-//   })
-// })
+    function changeFocus(event) {
+      if (event.key === 'Tab') {
+        event.preventDefault();
+
+        const currentCardIndex = cards.indexOf(document.activeElement);
+
+        if (currentCardIndex === cards.length - 1) {
+          const nextButtonIndex = (buttonIndex + 1) % cardBtns.length;
+
+          cardBtns[nextButtonIndex].focus();
+
+          cards.forEach((card) =>
+            card.removeEventListener('keydown', changeFocus)
+          );
+          console.log('Removed keydown event listeners from cards');
+        } else {
+          cards[currentCardIndex + 1].focus();
+        }
+      }
+    }
+
+    cards.forEach((card) => card.addEventListener('keydown', changeFocus));
+  });
+});
