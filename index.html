@@ -44,19 +44,22 @@
             <button
               id="daily"
               class="card__btn card__btn-duration"
-              aria-selected="true">
+              aria-selected="true"
+              tabindex="0">
               Daily
             </button>
             <button
               id="weekly"
               class="card__btn card__btn-duration"
-              aria-selected="false">
+              aria-selected="false"
+              tabindex="0">
               Weekly
             </button>
             <button
               id="monthly"
               class="card__btn card__btn-duration"
-              aria-selected="false">
+              aria-selected="false"
+              tabindex="0">
               Monthly
             </button>
           </div>
@@ -65,8 +68,8 @@
         <!-- Use <ul> and <li> to enhance screen reader users' experience -->
         <ul class="cards" aria-labelledby="daily" role="list">
           <li class="card card__item card--work" role="listitem">
-            <div class="card__content">
-              <div class="card__name">
+            <div class="card__content" tabindex="-1">
+              <div class="card__name" >
                 <!-- TODO: Can i place imag inside h3? If so will it get too big? -->
                 <!-- 'preventDefault()' stops reloading of the page-->
                 <!-- Screen reader reads 'alt text' of image because of the usage of 'aria-describedby'-->
@@ -107,7 +110,7 @@
           </li>
 
           <li class="card card__item card--play" role="listitem">
-            <div class="card__content">
+            <div class="card__content" tabindex="-1">
               <div class="card__name">
                 <h3 class="card__subtitle">
                   <a href="#" onclick="event.preventDefault()">Play</a>
@@ -131,7 +134,7 @@
           </li>
 
           <li class="card card__item card--study" role="listitem">
-            <div class="card__content">
+            <div class="card__content" tabindex="-1">
               <div class="card__name">
                 <h3 class="card__subtitle">
                   <a href="#" onclick="event.preventDefault()">Study</a>
@@ -155,7 +158,7 @@
           </li>
 
           <li class="card card__item card--exercise" role="listitem">
-            <div class="card__content">
+            <div class="card__content" tabindex="-1">
               <div class="card__name">
                 <h3 class="card__subtitle">
                   <a href="#" onclick="event.preventDefault()">Exercise</a>
@@ -179,7 +182,7 @@
           </li>
 
           <li class="card card__item card--social" role="listitem">
-            <div class="card__content">
+            <div class="card__content" tabindex="-1">
               <div class="card__name">
                 <h3 class="card__subtitle">
                   <a href="#" onclick="event.preventDefault()">Social</a>
@@ -203,7 +206,7 @@
           </li>
 
           <li class="card card__item card--self-care" role="listitem">
-            <div class="card__content">
+            <div class="card__content" tabindex="-1">
               <div class="card__name">
                 <h3 class="card__subtitle">
                   <a href="#" onclick="event.preventDefault()">Self Care</a>
