@@ -1,16 +1,9 @@
-const dailyBtn = document.querySelector('#daily');
-const weeklyBtn = document.querySelector('#weekly');
-const monthlyBtn = document.querySelector('#monthly');
-const cardWork = document.querySelector('.card--work');
-const cards = Array.from(document.querySelectorAll('.card__content'));
 const cardBtns = Array.from(document.querySelectorAll('.card__btn-duration'));
-// console.log(cardBtns);
-
-const cardNames = document.querySelectorAll('.card__subtitle a');
+const cards = Array.from(document.querySelectorAll('.card__content'));
+const dailyBtn = document.querySelector('#daily');
 
 /* Function to make whole card clickable & make text within copyable */
-// Array.prototype.forEach.call() is a way to use 'forEach' method on non-array objects.
-Array.prototype.forEach.call(cards, (card) => {
+cards.forEach((card) => {
   // down & up variables are only initialized, link is assigned to link element.
   let down,
     up,
@@ -20,9 +13,10 @@ Array.prototype.forEach.call(cards, (card) => {
   card.onmousedown = () => (down = +new Date()); // '+' converts Date object into a number.
   card.onmouseup = () => {
     up = +new Date();
+    /* Click link if difference between mousedown and mouseup is less than 200ms,
+    else select the text. */
     if (up - down < 200) {
       link.click();
-      // console.log('link clicked');
     }
   };
 });
@@ -36,29 +30,30 @@ async function fetchTimeTrackingData() {
     }
 
     const data = await response.json();
+
     renderTimeTrackingData(data);
   } catch (error) {
     console.error(`Could not get the data: ${error}`);
   }
 }
 
-// function renderTimeTrackingData(data) {
-
 fetchTimeTrackingData();
 
 function renderTimeTrackingData(data) {
   data.forEach(({ title, timeframes }) => {
     const { daily, weekly, monthly } = timeframes;
+    // Add dashes in place of spaces so that title matches with card id.
     const formattedTitleId = title.toLowerCase().replace(/\s+/g, '-');
 
     cardBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         showStats(title, formattedTitleId, timeframes[btn.id]);
-        updateAriaSelected(event);
-        // changeFocusToCard(event)
+        setActiveButton(event);
       });
     });
 
+    dailyBtn.classList.add('card__btn--active');
+    // Populate the cards with daily values when page loads.
     showStats(title, formattedTitleId, daily);
   });
 }
@@ -85,38 +80,47 @@ function showStats(categoryTitle, categoryTitleId, { current, previous }) {
   });
 }
 
-function updateAriaSelected(event) {
+function setActiveButton(event) {
   event.preventDefault();
-  cardBtns.forEach((button) => {
+
+  const buttons = cardBtns;
+  const selectedButton = event.currentTarget;
+
+  buttons.forEach((button) => {
     button.ariaSelected = false;
-    event.currentTarget.ariaSelected = true;
+    button.classList.remove('card__btn--active');
   });
+
+  selectedButton.ariaSelected = true;
+  selectedButton.classList.add('card__btn--active');
 }
 
 cardBtns.forEach((button, buttonIndex) => {
   button.addEventListener('click', (event) => {
     event.preventDefault();
-
-    button.style.color = 'white';
-    cards[0].focus();
+    cards[0].focus(); // Focus goes to first card when a button is clicked.
 
     function changeFocus(event) {
       if (event.key === 'Tab') {
         event.preventDefault();
 
-        const currentCardIndex = cards.indexOf(document.activeElement);
+        // Get the index of the card that is currently focused.
+        const focusedCardIndex = cards.indexOf(document.activeElement);
 
-        if (currentCardIndex === cards.length - 1) {
+        if (focusedCardIndex === cards.length - 1) {
+          // Change focus to first button if focus is on last card.
           const nextButtonIndex = (buttonIndex + 1) % cardBtns.length;
 
           cardBtns[nextButtonIndex].focus();
 
+          button.classList.remove('card__btn--active');
+
+          // Remove the keydown event listener from all cards to prevent double click.
           cards.forEach((card) =>
             card.removeEventListener('keydown', changeFocus)
           );
-          console.log('Removed keydown event listeners from cards');
         } else {
-          cards[currentCardIndex + 1].focus();
+          cards[focusedCardIndex + 1].focus();
         }
       }
     }

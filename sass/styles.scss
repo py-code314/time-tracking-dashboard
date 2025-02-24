@@ -123,10 +123,13 @@ body {
 }
 
 .card__btn-duration:hover,
-.card__btn-duration:focus {
+.card__btn-duration:focus,
+.card__btn--active {
   color: $clr-white;
   opacity: 1;
 }
+
+
 
 .cards {
   display: grid;

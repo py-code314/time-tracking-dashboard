@@ -201,7 +201,8 @@ body {
 }
 
 .card__btn-duration:hover,
-.card__btn-duration:focus {
+.card__btn-duration:focus,
+.card__btn--active {
   color: hsl(0, 0%, 100%);
   opacity: 1;
 }
