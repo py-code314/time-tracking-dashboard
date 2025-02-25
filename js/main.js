@@ -30,52 +30,75 @@ async function fetchTimeTrackingData() {
     }
 
     const data = await response.json();
-
-    renderTimeTrackingData(data);
+    console.log(data);
+    return data;
   } catch (error) {
     console.error(`Could not get the data: ${error}`);
   }
 }
 
-fetchTimeTrackingData();
 
-function renderTimeTrackingData(data) {
+
+
+async function renderTimeTrackingData(timeframe) {
+  const data = await fetchTimeTrackingData();
   data.forEach(({ title, timeframes }) => {
     const { daily, weekly, monthly } = timeframes;
-    // Add dashes in place of spaces so that title matches with card id.
+    // Add dashes in place of spaces so that title matches with card id.    
     const formattedTitleId = title.toLowerCase().replace(/\s+/g, '-');
+    showStats(
+      title,
+      formattedTitleId,
+      timeframe === 'daily' ? daily : timeframe === 'weekly' ? weekly : monthly
+    );
+  })
+  
 
-    cardBtns.forEach((btn) => {
-      btn.addEventListener('click', (event) => {
-        showStats(title, formattedTitleId, timeframes[btn.id]);
-        setActiveButton(event);
-      });
-    });
+  
+}
+dailyBtn.classList.add('card__btn--active');
+renderTimeTrackingData('daily');
 
-    dailyBtn.classList.add('card__btn--active');
-    // Populate the cards with daily values when page loads.
-    showStats(title, formattedTitleId, daily);
-  });
+async function handleButtonClick(event, buttonId) {
+  event.preventDefault();
+  renderTimeTrackingData(buttonId);
 }
 
-function showStats(categoryTitle, categoryTitleId, { current, previous }) {
+cardBtns.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    handleButtonClick(event, btn.id);
+    setActiveButton(event);
+  });
+});
+
+
+function showStats(categoryTitle, categoryTitleId, timeframe) {
+console.log(timeframe);
+ 
   const cardTitleElements = document.querySelectorAll('.card__subtitle a');
 
   cardTitleElements.forEach((cardTitleElement) => {
+    
+
     if (cardTitleElement.textContent === categoryTitle) {
+      console.log('matching');
+      
       const currentHoursElement = document.querySelector(
         `#current-hrs-${categoryTitleId}`
       );
-      currentHoursElement.textContent = current;
+      console.log(timeframe['current']);
+      currentHoursElement.textContent = timeframe.current;
 
       const previousHoursElement = document.querySelector(
         `#previous-hrs-${categoryTitleId}`
       );
+      
 
-      previousHoursElement.textContent =
-        previous === 1
-          ? `Last Week - ${previous}hr`
-          : `Last Week - ${previous}hrs`;
+      previousHoursElement.textContent = `Last Week - ${timeframe.previous}hr${
+        timeframe.previous !== 1 ? 's' : ''}`;
+        
+    } else {
+      console.log('No match found for card title');
     }
   });
 }
