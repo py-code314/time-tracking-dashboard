@@ -8,6 +8,7 @@ body {
   font-family: $ff-rubik;
   color: $clr-white;
   padding: $space-2100 $space-700;
+  background-color: $clr-very-dark-blue;
 }
 
 /* Hidden Page Title */
@@ -28,12 +29,24 @@ body {
   gap: $space-675;
   max-inline-size: $width-dashboard-mobile;
 
+  @include tablet {
+    max-inline-size: $width-dashboard-tablet;
+    grid-template: {
+      columns: repeat(auto-fit, minmax(357px, 1fr));
+      areas: 'member member'
+      'work play' 
+      'study exercise'
+      'social self-care';
+    }
+    gap: $space-750;
+  }
+
   @include laptop {
     max-inline-size: $width-dashboard-laptop;
     grid-template: {
-      columns: $width-card 1fr;
-      rows: repeat(2, 1fr);
-      areas: 'member stats' 'member stats';
+      columns: repeat(4, 1fr);
+      areas: 'member work play study'
+    'member exercise social self-care';
     }
     gap: $space-850;
   }
@@ -42,6 +55,10 @@ body {
 .card-member {
   background-color: $clr-dark-blue;
   border-radius: $radius-md;
+
+  @include tablet {
+    grid-area: member;
+  }
 
   @include laptop {
     grid-area: member;
@@ -129,23 +146,19 @@ body {
   opacity: 1;
 }
 
-
-
 .cards {
   display: grid;
   gap: $space-700;
   width: 100%;
   padding: 0;
 
+  @include tablet {
+    display: contents;
+  }
+
   @include laptop {
-    grid-area: stats;
-    grid-template: {
-      columns: repeat(3, $width-card);
-      // columns: repeat(auto-fill, minmax(255px, 1fr));
-      // rows: repeat(2, 1fr);
-      areas: 'work play study' 'exercise social self-care';
-    }
-    gap: 30px;
+    display: contents;  
+    // gap: 30px;
   }
 }
 
@@ -225,7 +238,6 @@ body {
 }
 
 .card__content:hover {
-  // box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
   transform: scale(1.05);
   transition: all 0.3s;
 }

@@ -14,6 +14,8 @@ $clr-desaturated-blue: hsl(235, 45%, 61%);
 $clr-pale-blue: hsl(236, 100%, 87%);
 $clr-white: hsl(0, 0%, 100%);
 
+// $clr-sample: hsl(216, 28%, 7%);
+
 // FONTS
 
 // Font Family
@@ -40,6 +42,7 @@ $space-500: pxToRem(18);
 $space-600: pxToRem(20);
 $space-675: pxToRem(23);
 $space-700: pxToRem(24);
+$space-750: pxToRem(26);
 $space-800: pxToRem(28);
 $space-850: pxToRem(30);
 $space-900: pxToRem(32);
@@ -52,6 +55,7 @@ $space-2225: pxToRem(85);
 
 // Card Widths
 $width-dashboard-mobile: pxToRem(327);
+$width-dashboard-tablet: pxToRem(740);
 $width-dashboard-laptop: pxToRem(1110);
 $width-card: pxToRem(255);
 

@@ -81,6 +81,7 @@ body {
   font-family: "Rubik", serif;
   color: hsl(0, 0%, 100%);
   padding: 5rem 1.5rem;
+  background-color: hsl(226, 43%, 10%);
 }
 
 /* Hidden Page Title */
@@ -101,12 +102,19 @@ body {
   gap: 1.4375rem;
   max-inline-size: 20.4375rem;
 }
-@media (min-width: 62em) {
+@media (min-width: 48em) {
+  .dashboard {
+    max-inline-size: 46.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(357px, 1fr));
+    grid-template-areas: "member member" "work play" "study exercise" "social self-care";
+    gap: 1.625rem;
+  }
+}
+@media (min-width: 75em) {
   .dashboard {
     max-inline-size: 69.375rem;
-    grid-template-columns: 15.9375rem 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "member stats" "member stats";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "member work play study" "member exercise social self-care";
     gap: 1.875rem;
   }
 }
@@ -115,7 +123,12 @@ body {
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem;
 }
-@media (min-width: 62em) {
+@media (min-width: 48em) {
+  .card-member {
+    grid-area: member;
+  }
+}
+@media (min-width: 75em) {
   .card-member {
     grid-area: member;
   }
@@ -130,7 +143,7 @@ body {
   border-radius: 0.9375rem;
   gap: 1rem;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card-member__content {
     flex-direction: column;
     align-items: start;
@@ -143,7 +156,7 @@ body {
   border: 3px solid hsl(0, 0%, 100%);
   border-radius: 50%;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card__img-profile {
     width: 5.3125rem;
     height: 5.3125rem;
@@ -165,7 +178,7 @@ body {
   font-weight: 300;
   opacity: 0.8;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card__title {
     font-size: 2.375rem;
     letter-spacing: 1.5px;
@@ -179,7 +192,7 @@ body {
   align-items: center;
   padding: 1.5rem 0.875rem 1.5rem 1.75rem;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card__btns {
     flex-direction: column;
     align-items: start;
@@ -213,12 +226,14 @@ body {
   width: 100%;
   padding: 0;
 }
-@media (min-width: 62em) {
+@media (min-width: 48em) {
   .cards {
-    grid-area: stats;
-    grid-template-columns: repeat(3, 15.9375rem);
-    grid-template-areas: "work play study" "exercise social self-care";
-    gap: 30px;
+    display: contents;
+  }
+}
+@media (min-width: 75em) {
+  .cards {
+    display: contents;
   }
 }
 
@@ -229,7 +244,7 @@ body {
 .card__item {
   padding-block-start: 2.375rem;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card__item {
     padding-block-start: 2.75rem;
   }
@@ -238,7 +253,7 @@ body {
 .card--work {
   background: hsl(15, 100%, 70%) url("../images/icon-work.svg") no-repeat 93% -11%;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card--work {
     grid-area: work;
     background-position: 90% -7%;
@@ -248,7 +263,7 @@ body {
 .card--play {
   background: hsl(195, 74%, 62%) url("../images/icon-play.svg") no-repeat 92% -7%;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card--play {
     grid-area: play;
     background-position: 88% -3%;
@@ -258,7 +273,7 @@ body {
 .card--study {
   background: hsl(348, 100%, 68%) url("../images/icon-study.svg") no-repeat 93% -8%;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card--study {
     grid-area: study;
     background-position: 90% -4%;
@@ -268,7 +283,7 @@ body {
 .card--exercise {
   background: hsl(145, 58%, 55%) url("../images/icon-exercise.svg") no-repeat 93% -1%;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card--exercise {
     grid-area: exercise;
     background-position: 90% 0;
@@ -278,7 +293,7 @@ body {
 .card--social {
   background: hsl(264, 64%, 52%) url("../images/icon-social.svg") no-repeat 95% -22%;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card--social {
     grid-area: social;
     background-position: 93% -10%;
@@ -288,7 +303,7 @@ body {
 .card--self-care {
   background: hsl(43, 84%, 65%) url("../images/icon-self-care.svg") no-repeat 94% -13%;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card--self-care {
     grid-area: self-care;
     background-position: 92% -5%;
@@ -303,7 +318,7 @@ body {
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card__content {
     gap: 1.125rem;
     padding: 1.875rem;
@@ -352,7 +367,7 @@ body {
 .card__stats {
   letter-spacing: 0.6px;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card__stats {
     flex-direction: column;
     align-items: start;
@@ -363,7 +378,7 @@ body {
   font-size: 1.875rem;
   font-weight: 300;
 }
-@media (min-width: 62em) {
+@media (min-width: 75em) {
   .card__hrs {
     font-size: 3.5rem;
     line-height: 1.4;

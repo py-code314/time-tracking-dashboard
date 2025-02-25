@@ -6,9 +6,16 @@
 }
 
 
-// Media Query
+// Media Queries
+
+@mixin tablet {
+  @media (min-width: 48em) {
+    @content;
+  }
+}
+
 @mixin laptop {
-  @media (min-width: 62em) {
+  @media (min-width: 75em) {
     @content;
   }
 }
