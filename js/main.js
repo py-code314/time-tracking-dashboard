@@ -37,36 +37,24 @@ async function fetchTimeTrackingData() {
   }
 }
 
-async function renderTimeTrackingData(timeframe) {
+async function renderTimeTrackingData(buttonId) {
   const data = await fetchTimeTrackingData();
   data.forEach(({ title, timeframes }) => {
     const { daily, weekly, monthly } = timeframes;
     // Add dashes in place of spaces so that title matches with card id.
     const formattedTitleId = title.toLowerCase().replace(/\s+/g, '-');
-    showStats(
-      title,
-      formattedTitleId,
-      timeframe === 'daily' ? daily : timeframe === 'weekly' ? weekly : monthly
-    );
+    const timeframe =
+      buttonId === 'daily' ? daily : buttonId === 'weekly' ? weekly : monthly;
+    showStats(title, formattedTitleId, timeframe, buttonId);
   });
 }
-dailyBtn.classList.add('card__btn--active');
-renderTimeTrackingData('daily');
 
 async function handleButtonClick(event, buttonId) {
   event.preventDefault();
   renderTimeTrackingData(buttonId);
 }
 
-cardBtns.forEach((btn) => {
-  btn.addEventListener('click', (event) => {
-    handleButtonClick(event, btn.id);
-    setActiveButton(event);
-    cards[0].focus();
-  });
-});
-
-function showStats(categoryTitle, categoryTitleId, timeframe) {
+function showStats(categoryTitle, categoryTitleId, timeframe, buttonId) {
   // console.log(timeframe);
 
   const cardTitleElements = document.querySelectorAll('.card__subtitle a');
@@ -84,9 +72,25 @@ function showStats(categoryTitle, categoryTitleId, timeframe) {
         `#previous-hrs-${categoryTitleId}`
       );
 
-      previousHoursElement.textContent = `Last Week - ${timeframe.previous}hr${
-        timeframe.previous !== 1 ? 's' : ''
-        }`;
+      switch (buttonId) {
+        case 'daily':
+          previousHoursElement.textContent = `Yesterday - ${
+            timeframe.previous
+          }hr${timeframe.previous !== 1 ? 's' : ''}`;
+          break;
+        case 'weekly':
+          previousHoursElement.textContent = `Last Week - ${
+            timeframe.previous
+          }hr${timeframe.previous !== 1 ? 's' : ''}`;
+          break;
+        case 'monthly':
+          previousHoursElement.textContent = `Last Month - ${
+            timeframe.previous
+          }hr${timeframe.previous !== 1 ? 's' : ''}`;
+          break;
+        default:
+          return;
+      }
     }
   });
 
@@ -110,3 +114,13 @@ function setActiveButton(event) {
   selectedButton.classList.add('card__btn--active');
 }
 
+cardBtns.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    handleButtonClick(event, btn.id);
+    setActiveButton(event);
+    cards[0].focus();
+  });
+});
+
+dailyBtn.classList.add('card__btn--active');
+renderTimeTrackingData('daily');
