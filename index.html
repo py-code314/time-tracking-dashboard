@@ -40,11 +40,12 @@
             </div>
           </div>
 
-          <div id="card__btns" class="card__btns" aria-label="Statistics">
+          <div id="card__btns" class="card__btns" aria-label="Time period buttons">
             <button
               id="daily"
               class="card__btn card__btn-duration"
               aria-selected="true"
+            aria-controls="cards-container"
               tabindex="0">
               Daily
             </button>
@@ -52,6 +53,7 @@
               id="weekly"
               class="card__btn card__btn-duration"
               aria-selected="false"
+              aria-controls="cards-container"
               tabindex="0">
               Weekly
             </button>
@@ -59,6 +61,7 @@
               id="monthly"
               class="card__btn card__btn-duration"
               aria-selected="false"
+              aria-controls="cards-container"
               tabindex="0">
               Monthly
             </button>
@@ -66,7 +69,7 @@
         </div>
 
         <!-- Use <ul> and <li> to enhance screen reader users' experience -->
-        <ul class="cards" aria-labelledby="daily" role="list">
+        <ul id="cards-container" class="cards" aria-labelledby="daily" role="list">
           <li class="card card__item card--work" role="listitem">
             <div class="card__content" tabindex="-1">
               <div class="card__name" >

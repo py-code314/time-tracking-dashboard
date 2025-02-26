@@ -30,31 +30,25 @@ async function fetchTimeTrackingData() {
     }
 
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.error(`Could not get the data: ${error}`);
   }
 }
 
-
-
-
 async function renderTimeTrackingData(timeframe) {
   const data = await fetchTimeTrackingData();
   data.forEach(({ title, timeframes }) => {
     const { daily, weekly, monthly } = timeframes;
-    // Add dashes in place of spaces so that title matches with card id.    
+    // Add dashes in place of spaces so that title matches with card id.
     const formattedTitleId = title.toLowerCase().replace(/\s+/g, '-');
     showStats(
       title,
       formattedTitleId,
       timeframe === 'daily' ? daily : timeframe === 'weekly' ? weekly : monthly
     );
-  })
-  
-
-  
+  });
 }
 dailyBtn.classList.add('card__btn--active');
 renderTimeTrackingData('daily');
@@ -68,39 +62,37 @@ cardBtns.forEach((btn) => {
   btn.addEventListener('click', (event) => {
     handleButtonClick(event, btn.id);
     setActiveButton(event);
+    cards[0].focus();
   });
 });
 
-
 function showStats(categoryTitle, categoryTitleId, timeframe) {
-console.log(timeframe);
- 
+  // console.log(timeframe);
+
   const cardTitleElements = document.querySelectorAll('.card__subtitle a');
+  let foundMatch = false;
 
   cardTitleElements.forEach((cardTitleElement) => {
-    
-
     if (cardTitleElement.textContent === categoryTitle) {
-      console.log('matching');
-      
+      foundMatch = true;
       const currentHoursElement = document.querySelector(
         `#current-hrs-${categoryTitleId}`
       );
-      console.log(timeframe['current']);
       currentHoursElement.textContent = timeframe.current;
 
       const previousHoursElement = document.querySelector(
         `#previous-hrs-${categoryTitleId}`
       );
-      
 
       previousHoursElement.textContent = `Last Week - ${timeframe.previous}hr${
-        timeframe.previous !== 1 ? 's' : ''}`;
-        
-    } else {
-      console.log('No match found for card title');
+        timeframe.previous !== 1 ? 's' : ''
+        }`;
     }
   });
+
+  if (!foundMatch) {
+    console.log('No match found for card title');
+  }
 }
 
 function setActiveButton(event) {
@@ -118,36 +110,3 @@ function setActiveButton(event) {
   selectedButton.classList.add('card__btn--active');
 }
 
-cardBtns.forEach((button, buttonIndex) => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
-    cards[0].focus(); // Focus goes to first card when a button is clicked.
-
-    function changeFocus(event) {
-      if (event.key === 'Tab') {
-        event.preventDefault();
-
-        // Get the index of the card that is currently focused.
-        const focusedCardIndex = cards.indexOf(document.activeElement);
-
-        if (focusedCardIndex === cards.length - 1) {
-          // Change focus to first button if focus is on last card.
-          const nextButtonIndex = (buttonIndex + 1) % cardBtns.length;
-
-          cardBtns[nextButtonIndex].focus();
-
-          button.classList.remove('card__btn--active');
-
-          // Remove the keydown event listener from all cards to prevent double click.
-          cards.forEach((card) =>
-            card.removeEventListener('keydown', changeFocus)
-          );
-        } else {
-          cards[focusedCardIndex + 1].focus();
-        }
-      }
-    }
-
-    cards.forEach((card) => card.addEventListener('keydown', changeFocus));
-  });
-});
