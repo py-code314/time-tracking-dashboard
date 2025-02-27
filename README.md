@@ -8,9 +8,9 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [Screenshots](#screenshots)
-      - [Mobile Screenshots](#mobile-screenshots)
-      - [Tablet Screenshots](#tablet-screenshots)
-      - [Desktop Screenshots](#desktop-screenshots)
+      - [Mobile](#mobile)
+      - [Tablet](#tablet)
+      - [Desktop](#desktop)
     - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
@@ -29,22 +29,22 @@ The dashboard is responsive and has a mobile, tablet and desktop layout so that 
 
 ### Screenshots
 
-#### Mobile Screenshots
+#### Mobile
 
 ![Mobile Design](./images/screenshots/screenshot-mobile-design.png)
 
-#### Tablet Screenshots
+#### Tablet 
 
 ![Tablet Design](./images/screenshots/screenshot-tablet-design.png)
 
-#### Desktop Screenshots
+#### Desktop 
 
 <p align="center">
   <img src="./images/screenshots/screenshot-desktop-design.png" width="45%" />
   <img src="./images/screenshots/screenshot-active-states.png" width="45%" />
 </p>
 <p align="center">
-  <em>Caption for Image 1</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Caption for Image 2</em>
+  <em>Desktop Design</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Active States</em>
 </p>
 
 
