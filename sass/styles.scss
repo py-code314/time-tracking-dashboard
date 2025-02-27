@@ -32,11 +32,8 @@ body {
   @include tablet {
     max-inline-size: $width-dashboard-tablet;
     grid-template: {
-      columns: repeat(auto-fit, minmax(357px, 1fr));
-      areas: 'member member'
-      'work play' 
-      'study exercise'
-      'social self-care';
+      columns: repeat(auto-fit, minmax($width-card-tablet, 1fr));
+      areas: 'member member' 'work play' 'study exercise' 'social self-care';
     }
     gap: $space-750;
   }
@@ -45,14 +42,13 @@ body {
     max-inline-size: $width-dashboard-laptop;
     grid-template: {
       columns: repeat(4, 1fr);
-      areas: 'member work play study'
-    'member exercise social self-care';
+      areas: 'member work play study' 'member exercise social self-care';
     }
     gap: $space-850;
   }
 }
 
-.card-member {
+.member {
   background-color: $clr-dark-blue;
   border-radius: $radius-md;
 
@@ -65,10 +61,10 @@ body {
   }
 }
 
-.card-member__content {
+.member__content {
   @include flex;
-  padding: $space-900 $space-1100 $space-900 $space-850;
 
+  padding: $space-900 $space-1100 $space-900 $space-850;
   background-color: $clr-blue;
   border-radius: $radius-md;
   gap: $space-400;
@@ -81,7 +77,7 @@ body {
   }
 }
 
-.card__img-profile {
+.member__img-profile {
   border: 3px solid $clr-white;
   border-radius: $radius-lg;
 
@@ -91,19 +87,18 @@ body {
   }
 }
 
-/* TODO: Why font weight not applying to h2? */
-.card__intro {
+.member__intro {
   font-weight: $fw-light;
 }
 
-.card__label {
+.member__label {
   font-size: $fs-300;
   opacity: $opacity-1;
   letter-spacing: 0.8px;
 }
 
-.card__title {
-  font-weight: $fw-light;
+.member__title {
+  font-weight: inherit;
   opacity: $opacity-2;
 
   @include laptop {
@@ -113,7 +108,7 @@ body {
   }
 }
 
-.card__btns {
+.btn--timeframes {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -127,7 +122,7 @@ body {
   }
 }
 
-.card__btn {
+.btn {
   background-color: $clr-dark-blue;
   border: transparent;
   font-size: $fs-500;
@@ -135,13 +130,13 @@ body {
   cursor: pointer;
 }
 
-.card__btn-duration {
+.btn--timeframe {
   opacity: $opacity-1;
 }
 
-.card__btn-duration:hover,
-.card__btn-duration:focus,
-.card__btn--active {
+.btn--timeframe:hover,
+.btn--timeframe:focus,
+.btn--active {
   color: $clr-white;
   opacity: 1;
 }
@@ -149,7 +144,6 @@ body {
 .cards {
   display: grid;
   gap: $space-700;
-  width: 100%;
   padding: 0;
 
   @include tablet {
@@ -157,8 +151,7 @@ body {
   }
 
   @include laptop {
-    display: contents;  
-    // gap: 30px;
+    display: contents;
   }
 }
 
@@ -182,6 +175,7 @@ body {
     background-position: 90% -7%;
   }
 }
+
 .card--play {
   background: $clr-soft-blue url('../images/icon-play.svg') no-repeat 92% -7%;
 
@@ -190,6 +184,7 @@ body {
     background-position: 88% -3%;
   }
 }
+
 .card--study {
   background: $clr-light-red-study url('../images/icon-study.svg') no-repeat 93% -8%;
 
@@ -198,6 +193,7 @@ body {
     background-position: 90% -4%;
   }
 }
+
 .card--exercise {
   background: $clr-lime-green url('../images/icon-exercise.svg') no-repeat 93% -1%;
 
@@ -206,6 +202,7 @@ body {
     background-position: 90% 0;
   }
 }
+
 .card--social {
   background: $clr-violet url('../images/icon-social.svg') no-repeat 95% -22%;
 
@@ -214,6 +211,7 @@ body {
     background-position: 93% -10%;
   }
 }
+
 .card--self-care {
   background: $clr-soft-orange url('../images/icon-self-care.svg') no-repeat 94% -13%;
 
@@ -255,24 +253,24 @@ body {
   text-decoration: none;
 }
 
-.card__name,
+.card__type,
 .card__stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.card__subtitle a {
+.card__title a {
   text-decoration: none;
   font-size: $fs-500;
   font-weight: $fw-normal;
 }
 
-.card__subtitle a:focus {
+.card__title a:focus {
   outline: none;
 }
 
-.card__btn-options {
+.btn--options {
   padding-inline-end: 0;
 }
 

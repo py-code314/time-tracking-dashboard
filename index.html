@@ -23,35 +23,40 @@
   <body>
     <main>
       <h1 class="sr-only">Time Tracking Dashboard</h1>
+
       <div class="dashboard">
-        <div class="card card-member">
-          <div class="card-member__content">
-            <div class="card__img-container">
+        <div class="card member">
+          <div class="member__content">
+            <div class="member__img-container">
               <img
-                class="card__img-profile"
+                class="member__img-profile"
                 src="./images/image-jeremy.png"
                 width="70"
                 height="70"
                 alt="A smiling man with dreadlocks, wearing denim jacket and earphones" />
             </div>
-            <div class="card__intro">
-              <p class="card__label">Report for</p>
-              <h2 class="card__title">Jeremy Robson</h2>
+
+            <div class="member__intro">
+              <p class="member__label">Report for</p>
+              <h2 class="member__title">Jeremy Robson</h2>
             </div>
           </div>
 
-          <div id="card__btns" class="card__btns" aria-label="Time period buttons">
+          <div
+            id="btns"
+            class="btns btn--timeframes"
+            aria-label="Time period buttons">
             <button
               id="daily"
-              class="card__btn card__btn-duration"
+              class="btn btn--timeframe"
               aria-selected="true"
-            aria-controls="cards-container"
+              aria-controls="cards-container"
               tabindex="0">
               Daily
             </button>
             <button
               id="weekly"
-              class="card__btn card__btn-duration"
+              class="btn btn--timeframe"
               aria-selected="false"
               aria-controls="cards-container"
               tabindex="0">
@@ -59,7 +64,7 @@
             </button>
             <button
               id="monthly"
-              class="card__btn card__btn-duration"
+              class="btn btn--timeframe"
               aria-selected="false"
               aria-controls="cards-container"
               tabindex="0">
@@ -69,42 +74,31 @@
         </div>
 
         <!-- Use <ul> and <li> to enhance screen reader users' experience -->
-        <ul id="cards-container" class="cards" aria-labelledby="daily" role="list">
+        <ul
+          id="cards-container"
+          class="cards"
+          aria-labelledby="daily"
+          role="list">
           <li class="card card__item card--work" role="listitem">
             <div class="card__content" tabindex="-1">
-              <div class="card__name" >
-                <!-- TODO: Can i place imag inside h3? If so will it get too big? -->
+              <div class="card__type">
                 <!-- 'preventDefault()' stops reloading of the page-->
-                <!-- Screen reader reads 'alt text' of image because of the usage of 'aria-describedby'-->
-                <h3 class="card__subtitle">
+                <h3 class="card__title">
                   <a href="#" onclick="event.preventDefault()">Work</a>
                 </h3>
-                
-                <!-- TODO: should i make the button disables as h3 is a link already?-->
 
                 <button
-                  class="card__btn card__btn-options"
-                  aria-label="More options menu for Work"
+                  class="btn btn--options"
+                  aria-label="More options"
                   aria-expanded="false">
                   <img
                     id="more__options"
-                    class="card__btn-img"
+                    class="btn__img"
                     src="./images/icon-ellipsis.svg"
                     alt="" />
                 </button>
-
-                
-
-                <!-- Alternate code -->
-                <!-- <h3 class="card__subtitle">
-                  <a href="#" onclick="event.preventDefault()">Work</a>
-                  <img
-                    class="card__options"
-                    src="./images/icon-ellipsis.svg"
-                    alt="More options for Work"
-                    aria-hidden="true" />
-                </h3> -->
               </div>
+
               <div class="card__stats">
                 <p id="current-hrs-work" class="card__hrs"></p>
                 <p id="previous-hrs-work" class="card__hrs-previous"></p>
@@ -114,21 +108,22 @@
 
           <li class="card card__item card--play" role="listitem">
             <div class="card__content" tabindex="-1">
-              <div class="card__name">
-                <h3 class="card__subtitle">
+              <div class="card__type">
+                <h3 class="card__title">
                   <a href="#" onclick="event.preventDefault()">Play</a>
                 </h3>
                 <button
-                  class="card__btn card__btn-options"
-                  aria-label="More options menu for Play"
+                  class="btn btn--options"
+                  aria-label="More options"
                   aria-expanded="false">
                   <img
                     id="more__options"
-                    class="card__btn-img"
+                    class="btn__img"
                     src="./images/icon-ellipsis.svg"
                     alt="" />
                 </button>
               </div>
+
               <div class="card__stats">
                 <p id="current-hrs-play" class="card__hrs"></p>
                 <p id="previous-hrs-play" class="card__hrs-previous"></p>
@@ -138,21 +133,23 @@
 
           <li class="card card__item card--study" role="listitem">
             <div class="card__content" tabindex="-1">
-              <div class="card__name">
-                <h3 class="card__subtitle">
+              <div class="card__type">
+                <h3 class="card__title">
                   <a href="#" onclick="event.preventDefault()">Study</a>
                 </h3>
+
                 <button
-                  class="card__btn card__btn-options"
-                  aria-label="More options menu for Study"
+                  class="btn btn--options"
+                  aria-label="More options"
                   aria-expanded="false">
                   <img
                     id="more__options"
-                    class="card__btn-img"
+                    class="btn__img"
                     src="./images/icon-ellipsis.svg"
                     alt="" />
                 </button>
               </div>
+
               <div class="card__stats">
                 <p id="current-hrs-study" class="card__hrs"></p>
                 <p id="previous-hrs-study" class="card__hrs-previous"></p>
@@ -162,21 +159,23 @@
 
           <li class="card card__item card--exercise" role="listitem">
             <div class="card__content" tabindex="-1">
-              <div class="card__name">
-                <h3 class="card__subtitle">
+              <div class="card__type">
+                <h3 class="card__title">
                   <a href="#" onclick="event.preventDefault()">Exercise</a>
                 </h3>
+
                 <button
-                  class="card__btn card__btn-options"
-                  aria-label="More options menu for Exercise"
+                  class="btn btn--options"
+                  aria-label="More options"
                   aria-expanded="false">
                   <img
                     id="more__options"
-                    class="card__btn-img"
+                    class="btn__img"
                     src="./images/icon-ellipsis.svg"
                     alt="" />
                 </button>
               </div>
+
               <div class="card__stats">
                 <p id="current-hrs-exercise" class="card__hrs"></p>
                 <p id="previous-hrs-exercise" class="card__hrs-previous"></p>
@@ -186,21 +185,23 @@
 
           <li class="card card__item card--social" role="listitem">
             <div class="card__content" tabindex="-1">
-              <div class="card__name">
-                <h3 class="card__subtitle">
+              <div class="card__type">
+                <h3 class="card__title">
                   <a href="#" onclick="event.preventDefault()">Social</a>
                 </h3>
+
                 <button
-                  class="card__btn card__btn-options"
-                  aria-label="More options menu for Social"
+                  class="btn btn--options"
+                  aria-label="More options"
                   aria-expanded="false">
                   <img
                     id="more__options"
-                    class="card__btn-img"
+                    class="btn__img"
                     src="./images/icon-ellipsis.svg"
                     alt="" />
                 </button>
               </div>
+
               <div class="card__stats">
                 <p id="current-hrs-social" class="card__hrs"></p>
                 <p id="previous-hrs-social" class="card__hrs-previous"></p>
@@ -210,21 +211,23 @@
 
           <li class="card card__item card--self-care" role="listitem">
             <div class="card__content" tabindex="-1">
-              <div class="card__name">
-                <h3 class="card__subtitle">
+              <div class="card__type">
+                <h3 class="card__title">
                   <a href="#" onclick="event.preventDefault()">Self Care</a>
                 </h3>
+
                 <button
-                  class="card__btn card__btn-options"
-                  aria-label="More options menu for Self Care"
+                  class="btn btn--options"
+                  aria-label="More options"
                   aria-expanded="false">
                   <img
                     id="more__options"
-                    class="card__btn-img"
+                    class="btn__img"
                     src="./images/icon-ellipsis.svg"
                     alt="" />
                 </button>
               </div>
+
               <div class="card__stats">
                 <p id="current-hrs-self-care" class="card__hrs"></p>
                 <p id="previous-hrs-self-care" class="card__hrs-previous"></p>
@@ -235,6 +238,5 @@
       </div>
     </main>
     <script src="./js/main.js"></script>
-   
   </body>
 </html>

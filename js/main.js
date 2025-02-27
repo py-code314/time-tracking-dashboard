@@ -1,4 +1,4 @@
-const cardBtns = Array.from(document.querySelectorAll('.card__btn-duration'));
+const cardBtns = Array.from(document.querySelectorAll('.btn--timeframe'));
 const cards = Array.from(document.querySelectorAll('.card__content'));
 const dailyBtn = document.querySelector('#daily');
 
@@ -7,10 +7,11 @@ cards.forEach((card) => {
   // down & up variables are only initialized, link is assigned to link element.
   let down,
     up,
-    link = card.querySelector('.card__subtitle a');
-  card.style.cursor = 'pointer';
+    link = card.querySelector('.card__title a');
 
-  card.onmousedown = () => (down = +new Date()); // '+' converts Date object into a number.
+  card.style.cursor = 'pointer';
+  // '+' converts Date object into a number.
+  card.onmousedown = () => (down = +new Date());
   card.onmouseup = () => {
     up = +new Date();
     /* Click link if difference between mousedown and mouseup is less than 200ms,
@@ -30,7 +31,7 @@ async function fetchTimeTrackingData() {
     }
 
     const data = await response.json();
-    // console.log(data);
+
     return data;
   } catch (error) {
     console.error(`Could not get the data: ${error}`);
@@ -39,6 +40,7 @@ async function fetchTimeTrackingData() {
 
 async function renderTimeTrackingData(buttonId) {
   const data = await fetchTimeTrackingData();
+
   data.forEach(({ title, timeframes }) => {
     const { daily, weekly, monthly } = timeframes;
     // Add dashes in place of spaces so that title matches with card id.
@@ -49,20 +51,19 @@ async function renderTimeTrackingData(buttonId) {
   });
 }
 
-async function handleButtonClick(event, buttonId) {
+function handleButtonClick(event, buttonId) {
   event.preventDefault();
   renderTimeTrackingData(buttonId);
 }
 
 function showStats(categoryTitle, categoryTitleId, timeframe, buttonId) {
-  // console.log(timeframe);
-
-  const cardTitleElements = document.querySelectorAll('.card__subtitle a');
+  const cardTitleElements = document.querySelectorAll('.card__title a');
   let foundMatch = false;
 
   cardTitleElements.forEach((cardTitleElement) => {
     if (cardTitleElement.textContent === categoryTitle) {
       foundMatch = true;
+
       const currentHoursElement = document.querySelector(
         `#current-hrs-${categoryTitleId}`
       );
@@ -107,11 +108,11 @@ function setActiveButton(event) {
 
   buttons.forEach((button) => {
     button.ariaSelected = false;
-    button.classList.remove('card__btn--active');
+    button.classList.remove('btn--active');
   });
 
   selectedButton.ariaSelected = true;
-  selectedButton.classList.add('card__btn--active');
+  selectedButton.classList.add('btn--active');
 }
 
 cardBtns.forEach((btn) => {
@@ -122,5 +123,5 @@ cardBtns.forEach((btn) => {
   });
 });
 
-dailyBtn.classList.add('card__btn--active');
+dailyBtn.classList.add('btn--active');
 renderTimeTrackingData('daily');

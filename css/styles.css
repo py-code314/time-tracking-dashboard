@@ -105,7 +105,7 @@ body {
 @media (min-width: 48em) {
   .dashboard {
     max-inline-size: 46.25rem;
-    grid-template-columns: repeat(auto-fit, minmax(357px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22.3125rem, 1fr));
     grid-template-areas: "member member" "work play" "study exercise" "social self-care";
     gap: 1.625rem;
   }
@@ -119,22 +119,22 @@ body {
   }
 }
 
-.card-member {
+.member {
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem;
 }
 @media (min-width: 48em) {
-  .card-member {
+  .member {
     grid-area: member;
   }
 }
 @media (min-width: 75em) {
-  .card-member {
+  .member {
     grid-area: member;
   }
 }
 
-.card-member__content {
+.member__content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +144,7 @@ body {
   gap: 1rem;
 }
 @media (min-width: 75em) {
-  .card-member__content {
+  .member__content {
     flex-direction: column;
     align-items: start;
     gap: 2.375rem;
@@ -152,48 +152,47 @@ body {
   }
 }
 
-.card__img-profile {
+.member__img-profile {
   border: 3px solid hsl(0, 0%, 100%);
   border-radius: 50%;
 }
 @media (min-width: 75em) {
-  .card__img-profile {
+  .member__img-profile {
     width: 5.3125rem;
     height: 5.3125rem;
   }
 }
 
-/* TODO: Why font weight not applying to h2? */
-.card__intro {
+.member__intro {
   font-weight: 300;
 }
 
-.card__label {
+.member__label {
   font-size: 0.875rem;
   opacity: 0.5;
   letter-spacing: 0.8px;
 }
 
-.card__title {
-  font-weight: 300;
+.member__title {
+  font-weight: inherit;
   opacity: 0.8;
 }
 @media (min-width: 75em) {
-  .card__title {
+  .member__title {
     font-size: 2.375rem;
     letter-spacing: 1.5px;
     line-height: 1.3;
   }
 }
 
-.card__btns {
+.btn--timeframes {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 0.875rem 1.5rem 1.75rem;
 }
 @media (min-width: 75em) {
-  .card__btns {
+  .btn--timeframes {
     flex-direction: column;
     align-items: start;
     gap: 1.25rem;
@@ -201,7 +200,7 @@ body {
   }
 }
 
-.card__btn {
+.btn {
   background-color: hsl(235, 46%, 20%);
   border: transparent;
   font-size: 1.125rem;
@@ -209,13 +208,13 @@ body {
   cursor: pointer;
 }
 
-.card__btn-duration {
+.btn--timeframe {
   opacity: 0.5;
 }
 
-.card__btn-duration:hover,
-.card__btn-duration:focus,
-.card__btn--active {
+.btn--timeframe:hover,
+.btn--timeframe:focus,
+.btn--active {
   color: hsl(0, 0%, 100%);
   opacity: 1;
 }
@@ -223,7 +222,6 @@ body {
 .cards {
   display: grid;
   gap: 1.5rem;
-  width: 100%;
   padding: 0;
 }
 @media (min-width: 48em) {
@@ -343,24 +341,24 @@ body {
   text-decoration: none;
 }
 
-.card__name,
+.card__type,
 .card__stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.card__subtitle a {
+.card__title a {
   text-decoration: none;
   font-size: 1.125rem;
   font-weight: 400;
 }
 
-.card__subtitle a:focus {
+.card__title a:focus {
   outline: none;
 }
 
-.card__btn-options {
+.btn--options {
   padding-inline-end: 0;
 }
 
