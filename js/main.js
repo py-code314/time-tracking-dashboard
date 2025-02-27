@@ -1,3 +1,4 @@
+/* Global Variables */
 const cardBtns = Array.from(document.querySelectorAll('.btn--timeframe'));
 const cards = Array.from(document.querySelectorAll('.card__content'));
 const dailyBtn = document.querySelector('#daily');
@@ -14,14 +15,15 @@ cards.forEach((card) => {
   card.onmousedown = () => (down = +new Date());
   card.onmouseup = () => {
     up = +new Date();
-    /* Click link if difference between mousedown and mouseup is less than 200ms,
-    else select the text. */
+    // Click link if difference between mousedown and mouseup is less than 200ms,
+    // else select the text. 
     if (up - down < 200) {
       link.click();
     }
   };
 });
 
+/* Fetches data from data.json and returns it in JSON format */
 async function fetchTimeTrackingData() {
   try {
     const response = await fetch('../data.json');
@@ -38,6 +40,7 @@ async function fetchTimeTrackingData() {
   }
 }
 
+  /* Fetches data from data.json and renders it to the DOM based on the active button */
 async function renderTimeTrackingData(buttonId) {
   const data = await fetchTimeTrackingData();
 
@@ -51,17 +54,22 @@ async function renderTimeTrackingData(buttonId) {
   });
 }
 
+/* Handles the click event for time frame buttons and 
+renders time tracking data for the selected time frame */
 function handleButtonClick(event, buttonId) {
   event.preventDefault();
   renderTimeTrackingData(buttonId);
 }
 
+/* Shows the current and previous hours for a given category in the time tracking dashboard */
 function showStats(categoryTitle, categoryTitleId, timeframe, buttonId) {
   const cardTitleElements = document.querySelectorAll('.card__title a');
   let foundMatch = false;
 
+  // Loop over each card title element and check if it matches the category title
   cardTitleElements.forEach((cardTitleElement) => {
     if (cardTitleElement.textContent === categoryTitle) {
+      // Don't log a message if a match is found
       foundMatch = true;
 
       const currentHoursElement = document.querySelector(
@@ -73,6 +81,7 @@ function showStats(categoryTitle, categoryTitleId, timeframe, buttonId) {
         `#previous-hrs-${categoryTitleId}`
       );
 
+      // Update the previous hours element based on the buttonId
       switch (buttonId) {
         case 'daily':
           previousHoursElement.textContent = `Yesterday - ${
@@ -100,6 +109,7 @@ function showStats(categoryTitle, categoryTitleId, timeframe, buttonId) {
   }
 }
 
+/* Set the active state of the given button */
 function setActiveButton(event) {
   event.preventDefault();
 
@@ -115,6 +125,7 @@ function setActiveButton(event) {
   selectedButton.classList.add('btn--active');
 }
 
+/* Event listeners for the time frame buttons */
 cardBtns.forEach((btn) => {
   btn.addEventListener('click', (event) => {
     handleButtonClick(event, btn.id);
@@ -123,5 +134,6 @@ cardBtns.forEach((btn) => {
   });
 });
 
+/* Initial rendering of the time tracking data for the "Daily" time frame */
 dailyBtn.classList.add('btn--active');
 renderTimeTrackingData('daily');
