@@ -330,6 +330,7 @@ body {
 
 /* Styles for Card Content */
 .card__content {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
