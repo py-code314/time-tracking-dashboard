@@ -24,7 +24,7 @@ This small dashboard project allows users to switch between viewing their daily,
 
 It also provides a useful hover state for each card. By clicking on the card, user can see more details about each activity although that feature is not implemented in this project.
 
-The dashboard is responsive and has a mobile, tablet and desktop layout so that users can view the it on any device.
+The dashboard is responsive and has a mobile, tablet and desktop layout so that users can view it on any device.
 
 
 ### Screenshots
@@ -74,7 +74,7 @@ I want to learn how to implement Accessibility features for keyboard and screen 
 
 ### Useful resources
 
-1. This article ([Cards](https://inclusive-components.design/cards/)) discusses quite a lot about how to use semantic HTML and Aria attributes to make the cards accessible to screen readers.
+1. This article ([Cards](https://inclusive-components.design/cards/)) discusses quite a bit about how to use semantic HTML and Aria attributes to make the cards accessible to screen readers.
 
 2. This article ([Cors and Recipes](https://wesbos.com/javascript/13-ajax-and-fetching-data/75-cors-and-recipes)) by Wes Bos explains how to fetch the data from an API and use it to populate the cards.
 
@@ -83,4 +83,4 @@ I want to learn how to implement Accessibility features for keyboard and screen 
 ## Acknowledgments
 
 1. I'd like to thank [Andy Bell](https://piccalil.li/blog/a-more-modern-css-reset/) for his CSS reset.
-2. I used some [CSS and JS code](https://inclusive-components.design/cards/) from the website by Haydon Pickering to make the cards accessible to screen readers.
+2. I used [CSS and JS code](https://inclusive-components.design/cards/) from the website by Haydon Pickering to apply some styles and accessibility features.
