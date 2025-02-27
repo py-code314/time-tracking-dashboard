@@ -8,6 +8,9 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [Screenshots](#screenshots)
+      - [Mobile Screenshots](#mobile-screenshots)
+      - [Tablet Screenshots](#tablet-screenshots)
+      - [Desktop Screenshots](#desktop-screenshots)
     - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
@@ -26,16 +29,23 @@ The dashboard is responsive and has a mobile, tablet and desktop layout so that 
 
 ### Screenshots
 
-<table>
-  <tr>
-    <td align="center"><img src="./images/screenshots/screenshot-mobile-design.png" alt="Mobile Design"><br><em>Mobile Design</em></td>
-    <td align="center"><img src="./images/screenshots/screenshot-tablet-design.png" alt="Mobile Success"><br><em>Tablet Design</em></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="./images/screenshots/screenshot-desktop-design.png" alt="Mobile Design"><br><em>Desktop Design</em></td>
-    <td align="center"><img src="./images/screenshots/screenshot-active-states.png" alt="Mobile Success"><br><em>Active States</em></td>
-  </tr>
-</table>
+#### Mobile Screenshots
+
+![Mobile Design](./images/screenshots/screenshot-mobile-design.png)
+
+#### Tablet Screenshots
+
+![Tablet Design](./images/screenshots/screenshot-tablet-design.png)
+
+#### Desktop Screenshots
+
+<p align="center">
+  <img src="./images/screenshots/screenshot-desktop-design.png" width="45%" />
+  <img src="./images/screenshots/screenshot-active-states.png" width="45%" />
+</p>
+<p align="center">
+  <em>Caption for Image 1</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Caption for Image 2</em>
+</p>
 
 
 ### Links
@@ -64,10 +74,10 @@ I want to learn how to implement Accessibility features for keyboard and screen 
 
 ### Useful resources
 
-1. This article discusses quite a lot about how to use semantic HTML and Aria attributes to make the cards accessible to screen readers.
-[Cards](https://inclusive-components.design/cards/)
-2. This article by Wes Bos explains how to fetch the data from an API and use it to populate the cards.
-[Cors and Recipes](https://wesbos.com/javascript/13-ajax-and-fetching-data/75-cors-and-recipes)
+1. This article ([Cards](https://inclusive-components.design/cards/)) discusses quite a lot about how to use semantic HTML and Aria attributes to make the cards accessible to screen readers.
+
+2. This article ([Cors and Recipes](https://wesbos.com/javascript/13-ajax-and-fetching-data/75-cors-and-recipes)) by Wes Bos explains how to fetch the data from an API and use it to populate the cards.
+
 
 
 ## Acknowledgments
