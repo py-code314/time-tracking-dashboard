@@ -22,6 +22,8 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 This small dashboard project allows users to switch between viewing their daily, weekly, and monthly time tracking stats. User can change the timeframe by clicking on the buttons. Stats are populated from a JSON file and are displayed as cards. 
 
+For keyboard use, user can use Tab key to navigate between the buttons and the cards. When a button is focused, user can use Enter key to change the timeframe and focus to the first card. After focusing a card, user can use Tab key to navigate between the cards and after the last card, focus is returned to the first button.
+
 It also provides a useful hover state for each card. By clicking on the card, user can see more details about each activity although that feature is not implemented in this project.
 
 The dashboard is responsive and has a mobile, tablet and desktop layout so that users can view it on any device.
