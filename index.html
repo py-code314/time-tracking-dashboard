@@ -22,11 +22,15 @@
   </head>
   <body>
     <main>
+      <!-- Accessible title -->
       <h1 class="sr-only">Time Tracking Dashboard</h1>
 
+      <!-- Dashboard -->
       <div class="dashboard">
+        <!-- Member -->
         <div class="card member">
           <div class="member__content">
+            <!-- Profile picture -->
             <div class="member__img-container">
               <img
                 class="member__img-profile"
@@ -36,16 +40,19 @@
                 alt="A smiling man with dreadlocks, wearing denim jacket and earphones" />
             </div>
 
+            <!-- Intro -->
             <div class="member__intro">
               <p class="member__label">Report for</p>
               <h2 class="member__title">Jeremy Robson</h2>
             </div>
           </div>
 
+          <!-- Timeframes -->
           <div
             id="btns"
             class="btns btn--timeframes"
             aria-label="Time period buttons">
+            <!-- Tabindex = 0 changes focus back to the button after cycling through all cards-->
             <button
               id="daily"
               class="btn btn--timeframe"
@@ -74,11 +81,13 @@
         </div>
 
         <!-- Use <ul> and <li> to enhance screen reader users' experience -->
+        <!-- Cards-->
         <ul
           id="cards-container"
           class="cards"
           aria-labelledby="daily"
           role="list">
+          <!-- Card Work -->
           <li class="card card__item card--work" role="listitem">
             <div class="card__content" tabindex="-1">
               <div class="card__type">
@@ -99,6 +108,7 @@
                 </button>
               </div>
 
+              <!-- Card stats -->
               <div class="card__stats">
                 <p id="current-hrs-work" class="card__hrs"></p>
                 <p id="previous-hrs-work" class="card__hrs-previous"></p>
@@ -106,12 +116,14 @@
             </div>
           </li>
 
+          <!-- Card Play -->
           <li class="card card__item card--play" role="listitem">
             <div class="card__content" tabindex="-1">
               <div class="card__type">
                 <h3 class="card__title">
                   <a href="#" onclick="event.preventDefault()">Play</a>
                 </h3>
+
                 <button
                   class="btn btn--options"
                   aria-label="More options"
@@ -124,6 +136,7 @@
                 </button>
               </div>
 
+              <!-- Card stats -->
               <div class="card__stats">
                 <p id="current-hrs-play" class="card__hrs"></p>
                 <p id="previous-hrs-play" class="card__hrs-previous"></p>
@@ -131,6 +144,7 @@
             </div>
           </li>
 
+          <!-- Card Study -->
           <li class="card card__item card--study" role="listitem">
             <div class="card__content" tabindex="-1">
               <div class="card__type">
@@ -150,6 +164,7 @@
                 </button>
               </div>
 
+              <!-- Card stats -->
               <div class="card__stats">
                 <p id="current-hrs-study" class="card__hrs"></p>
                 <p id="previous-hrs-study" class="card__hrs-previous"></p>
@@ -157,6 +172,7 @@
             </div>
           </li>
 
+          <!-- Card Exercise -->
           <li class="card card__item card--exercise" role="listitem">
             <div class="card__content" tabindex="-1">
               <div class="card__type">
@@ -176,6 +192,7 @@
                 </button>
               </div>
 
+              <!-- Card stats -->
               <div class="card__stats">
                 <p id="current-hrs-exercise" class="card__hrs"></p>
                 <p id="previous-hrs-exercise" class="card__hrs-previous"></p>
@@ -183,6 +200,7 @@
             </div>
           </li>
 
+          <!-- Card Social -->
           <li class="card card__item card--social" role="listitem">
             <div class="card__content" tabindex="-1">
               <div class="card__type">
@@ -202,6 +220,7 @@
                 </button>
               </div>
 
+              <!-- Card stats -->
               <div class="card__stats">
                 <p id="current-hrs-social" class="card__hrs"></p>
                 <p id="previous-hrs-social" class="card__hrs-previous"></p>
@@ -209,6 +228,7 @@
             </div>
           </li>
 
+          <!-- Card Self Care -->
           <li class="card card__item card--self-care" role="listitem">
             <div class="card__content" tabindex="-1">
               <div class="card__type">
@@ -228,6 +248,7 @@
                 </button>
               </div>
 
+              <!-- Card stats -->
               <div class="card__stats">
                 <p id="current-hrs-self-care" class="card__hrs"></p>
                 <p id="previous-hrs-self-care" class="card__hrs-previous"></p>
