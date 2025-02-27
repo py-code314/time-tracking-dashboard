@@ -156,6 +156,12 @@ body {
   border-radius: 0.9375rem;
   gap: 1rem;
 }
+@media (min-width: 48em) {
+  .member__content {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
 @media (min-width: 75em) {
   .member__content {
     flex-direction: column;
