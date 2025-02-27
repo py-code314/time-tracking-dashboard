@@ -5,9 +5,7 @@
   align-items: center;
 }
 
-
 // Media Queries
-
 @mixin tablet {
   @media (min-width: 48em) {
     @content;

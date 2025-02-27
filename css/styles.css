@@ -33,14 +33,21 @@ body {
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -58,8 +65,10 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
 }
@@ -74,6 +83,7 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+/* Styles for the whole page */
 body {
   display: flex;
   justify-content: center;
@@ -97,6 +107,7 @@ body {
   border: 0;
 }
 
+/* Styles for the Dashboard */
 .dashboard {
   display: grid;
   gap: 1.4375rem;
@@ -119,6 +130,7 @@ body {
   }
 }
 
+/* Styles for the Member Card */
 .member {
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem;
@@ -134,6 +146,7 @@ body {
   }
 }
 
+/* Styles for the Member Card Content */
 .member__content {
   display: flex;
   justify-content: center;
@@ -152,6 +165,7 @@ body {
   }
 }
 
+/* Styles for the Member Image */
 .member__img-profile {
   border: 3px solid hsl(0, 0%, 100%);
   border-radius: 50%;
@@ -163,6 +177,7 @@ body {
   }
 }
 
+/* Styles for the Member Card Intro */
 .member__intro {
   font-weight: 300;
 }
@@ -185,6 +200,7 @@ body {
   }
 }
 
+/* Styles for Buttons Container */
 .btn--timeframes {
   display: flex;
   justify-content: space-between;
@@ -200,6 +216,7 @@ body {
   }
 }
 
+/* Styles for all Buttons */
 .btn {
   background-color: hsl(235, 46%, 20%);
   border: transparent;
@@ -212,6 +229,7 @@ body {
   opacity: 0.5;
 }
 
+/* Styles for Active Button */
 .btn--timeframe:hover,
 .btn--timeframe:focus,
 .btn--active {
@@ -219,6 +237,7 @@ body {
   opacity: 1;
 }
 
+/* Styles for Cards Container */
 .cards {
   display: grid;
   gap: 1.5rem;
@@ -235,6 +254,7 @@ body {
   }
 }
 
+/* Styles for individual Cards */
 .card {
   border-radius: 0.9375rem;
 }
@@ -308,6 +328,7 @@ body {
   }
 }
 
+/* Styles for Card Content */
 .card__content {
   display: flex;
   flex-direction: column;
@@ -323,24 +344,6 @@ body {
   }
 }
 
-.card__content:hover {
-  transform: scale(1.05);
-  transition: all 0.3s;
-}
-
-.card__content a:focus {
-  text-decoration: underline;
-}
-
-.card__content:focus-within {
-  transform: scale(1.05);
-  transition: all 0.3s;
-}
-
-.card__content:focus-within a:focus {
-  text-decoration: none;
-}
-
 .card__type,
 .card__stats {
   display: flex;
@@ -352,10 +355,6 @@ body {
   text-decoration: none;
   font-size: 1.125rem;
   font-weight: 400;
-}
-
-.card__title a:focus {
-  outline: none;
 }
 
 .btn--options {
@@ -387,4 +386,27 @@ body {
   font-size: 0.875rem;
   font-weight: 300;
   color: hsl(236, 100%, 87%);
+}
+
+/* Styles for active Card */
+.card__content:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.card__content a:focus {
+  text-decoration: underline;
+}
+
+.card__content:focus-within {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.card__content:focus-within a:focus {
+  text-decoration: none;
+}
+
+.card__title a:focus {
+  outline: none;
 }

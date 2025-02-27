@@ -1,7 +1,9 @@
+// Import Partials
 @use 'mixins' as *;
 @use 'reset' as *;
 @use 'variables' as *;
 
+/* Styles for the whole page */
 body {
   @include flex;
 
@@ -24,6 +26,7 @@ body {
   border: 0;
 }
 
+/* Styles for the Dashboard */
 .dashboard {
   display: grid;
   gap: $space-675;
@@ -48,6 +51,7 @@ body {
   }
 }
 
+/* Styles for the Member Card */
 .member {
   background-color: $clr-dark-blue;
   border-radius: $radius-md;
@@ -61,6 +65,7 @@ body {
   }
 }
 
+/* Styles for the Member Card Content */
 .member__content {
   @include flex;
 
@@ -77,6 +82,7 @@ body {
   }
 }
 
+/* Styles for the Member Image */
 .member__img-profile {
   border: 3px solid $clr-white;
   border-radius: $radius-lg;
@@ -87,6 +93,7 @@ body {
   }
 }
 
+/* Styles for the Member Card Intro */
 .member__intro {
   font-weight: $fw-light;
 }
@@ -98,6 +105,7 @@ body {
 }
 
 .member__title {
+  // h2 not inheriting font-weight from parent container
   font-weight: inherit;
   opacity: $opacity-2;
 
@@ -108,6 +116,7 @@ body {
   }
 }
 
+/* Styles for Buttons Container */
 .btn--timeframes {
   display: flex;
   justify-content: space-between;
@@ -122,6 +131,7 @@ body {
   }
 }
 
+/* Styles for all Buttons */
 .btn {
   background-color: $clr-dark-blue;
   border: transparent;
@@ -134,6 +144,7 @@ body {
   opacity: $opacity-1;
 }
 
+/* Styles for Active Button */
 .btn--timeframe:hover,
 .btn--timeframe:focus,
 .btn--active {
@@ -141,6 +152,7 @@ body {
   opacity: 1;
 }
 
+/* Styles for Cards Container */
 .cards {
   display: grid;
   gap: $space-700;
@@ -155,6 +167,7 @@ body {
   }
 }
 
+/* Styles for individual Cards */
 .card {
   border-radius: $radius-md;
 }
@@ -221,6 +234,7 @@ body {
   }
 }
 
+/* Styles for Card Content */
 .card__content {
   display: flex;
   flex-direction: column;
@@ -235,24 +249,6 @@ body {
   }
 }
 
-.card__content:hover {
-  transform: scale(1.05);
-  transition: all 0.3s;
-}
-
-.card__content a:focus {
-  text-decoration: underline;
-}
-
-.card__content:focus-within {
-  transform: scale(1.05);
-  transition: all 0.3s;
-}
-
-.card__content:focus-within a:focus {
-  text-decoration: none;
-}
-
 .card__type,
 .card__stats {
   display: flex;
@@ -264,10 +260,6 @@ body {
   text-decoration: none;
   font-size: $fs-500;
   font-weight: $fw-normal;
-}
-
-.card__title a:focus {
-  outline: none;
 }
 
 .btn--options {
@@ -297,4 +289,27 @@ body {
   font-size: $fs-300;
   font-weight: $fw-light;
   color: $clr-pale-blue;
+}
+
+/* Styles for active Card */
+.card__content:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.card__content a:focus {
+  text-decoration: underline;
+}
+
+.card__content:focus-within {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.card__content:focus-within a:focus {
+  text-decoration: none;
+}
+
+.card__title a:focus {
+  outline: none;
 }

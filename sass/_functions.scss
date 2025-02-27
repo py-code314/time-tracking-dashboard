@@ -1,6 +1,5 @@
-// Import the math library
+// Import math library
 @use 'sass:math';
-
 
 // Convert px to rem
 @function pxToRem($px) {

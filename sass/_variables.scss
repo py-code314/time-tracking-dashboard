@@ -1,3 +1,4 @@
+// Import Partials
 @use 'functions' as *;
 
 // Colors
@@ -14,12 +15,10 @@ $clr-desaturated-blue: hsl(235, 45%, 61%);
 $clr-pale-blue: hsl(236, 100%, 87%);
 $clr-white: hsl(0, 0%, 100%);
 
-// $clr-sample: hsl(216, 28%, 7%);
-
 // FONTS
 
 // Font Family
-$ff-rubik: "Rubik", serif;
+$ff-rubik: 'Rubik', serif;
 
 // Font Sizes
 $fs-300: pxToRem(14);
