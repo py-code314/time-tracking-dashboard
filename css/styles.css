@@ -115,8 +115,8 @@ body {
 }
 @media (min-width: 48em) {
   .dashboard {
-    max-inline-size: 46.25rem;
-    grid-template-columns: repeat(auto-fit, minmax(22.3125rem, 1fr));
+    max-inline-size: 42.875rem;
+    grid-template-columns: repeat(auto-fit, minmax(20.625rem, 1fr));
     grid-template-areas: "member member" "work play" "study exercise" "social self-care";
     gap: 1.625rem;
   }
