@@ -163,6 +163,7 @@ body {
   display: grid;
   gap: $space-700;
   padding: 0;
+  list-style-type: none;
 
   @include tablet {
     display: contents;

@@ -248,6 +248,7 @@ body {
   display: grid;
   gap: 1.5rem;
   padding: 0;
+  list-style-type: none;
 }
 @media (min-width: 48em) {
   .cards {

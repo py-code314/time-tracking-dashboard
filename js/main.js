@@ -117,11 +117,11 @@ function setActiveButton(event) {
   const selectedButton = event.currentTarget;
 
   buttons.forEach((button) => {
-    button.ariaSelected = false;
+    // button.ariaSelected = false;
     button.classList.remove('btn--active');
   });
 
-  selectedButton.ariaSelected = true;
+  // selectedButton.ariaSelected = true;
   selectedButton.classList.add('btn--active');
 }
 
